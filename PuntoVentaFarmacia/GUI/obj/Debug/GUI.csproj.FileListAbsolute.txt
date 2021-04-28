@@ -22,3 +22,10 @@ C:\Users\GeRaLsS4\source\repos\PuntoVentaFarmacia\GUI\obj\Debug\GUI.frmProveedor
 C:\Users\GeRaLsS4\source\repos\PuntoVentaFarmacia\GUI\obj\Debug\GUI.frmVenta.resources
 C:\Users\GeRaLsS4\source\repos\PuntoVentaFarmacia\GUI\obj\Debug\GUI.csproj.CopyComplete
 C:\Users\GeRaLsS4\source\repos\PuntoVentaFarmacia\GUI\obj\Debug\GUI.frmHorarios.resources
+C:\Users\GeRaLsS4\source\repos\PuntoVentaFarmacia\GUI\bin\Debug\Metroit.45.dll
+C:\Users\GeRaLsS4\source\repos\PuntoVentaFarmacia\GUI\bin\Debug\Metroit.Windows.Forms.45.dll
+C:\Users\GeRaLsS4\source\repos\PuntoVentaFarmacia\GUI\bin\Debug\Metroit.45.xml
+C:\Users\GeRaLsS4\source\repos\PuntoVentaFarmacia\GUI\bin\Debug\Metroit.Windows.Forms.45.xml
+C:\Users\GeRaLsS4\source\repos\PuntoVentaFarmacia\GUI\bin\Debug\CircularProgressBar.dll
+C:\Users\GeRaLsS4\source\repos\PuntoVentaFarmacia\GUI\bin\Debug\WinFormAnimation.dll
+C:\Users\GeRaLsS4\source\repos\PuntoVentaFarmacia\GUI\bin\Debug\CircularProgressBar.xml

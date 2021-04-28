@@ -33,10 +33,11 @@ namespace GUI
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblHora = new System.Windows.Forms.Label();
             this.lblFecha = new System.Windows.Forms.Label();
-            this.lblUsuario = new System.Windows.Forms.Label();
             this.tmrFech = new System.Windows.Forms.Timer(this.components);
             this.pbxMedicamento = new System.Windows.Forms.PictureBox();
             this.lblBienvenido = new System.Windows.Forms.Label();
+            this.tmrAparecer = new System.Windows.Forms.Timer(this.components);
+            this.tmrDesvanecer = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxMedicamento)).BeginInit();
             this.SuspendLayout();
@@ -45,10 +46,9 @@ namespace GUI
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(68)))), ((int)(((byte)(79)))));
             this.panel1.Controls.Add(this.lblHora);
             this.panel1.Controls.Add(this.lblFecha);
-            this.panel1.Controls.Add(this.lblUsuario);
             this.panel1.Location = new System.Drawing.Point(0, 581);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1080, 33);
@@ -77,17 +77,6 @@ namespace GUI
             this.lblFecha.Size = new System.Drawing.Size(75, 24);
             this.lblFecha.TabIndex = 25;
             this.lblFecha.Text = "Fecha:";
-            // 
-            // lblUsuario
-            // 
-            this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuario.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblUsuario.Location = new System.Drawing.Point(5, 6);
-            this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(158, 24);
-            this.lblUsuario.TabIndex = 24;
-            this.lblUsuario.Text = "Usuario: ADMIN";
             // 
             // tmrFech
             // 
@@ -144,10 +133,11 @@ namespace GUI
         #endregion
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblFecha;
-        private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.Label lblHora;
         private System.Windows.Forms.Timer tmrFech;
         private System.Windows.Forms.PictureBox pbxMedicamento;
         private System.Windows.Forms.Label lblBienvenido;
+        private System.Windows.Forms.Timer tmrAparecer;
+        private System.Windows.Forms.Timer tmrDesvanecer;
     }
 }

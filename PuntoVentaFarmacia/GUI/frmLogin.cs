@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using System.Text.RegularExpressions;
 
 
 namespace GUI
@@ -19,6 +20,7 @@ namespace GUI
         {
             InitializeComponent();
             mostrarMensajes();
+            
         }
         #region movimiento de ventana
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -53,16 +55,17 @@ namespace GUI
             Application.Exit();
         }
         #endregion
+
         #region controles de acceso y registro de usuario
         private void btnAcceder_Click(object sender, EventArgs e)
         {
             if (txtUsuario.Text == "ADMIN")
             {
                 if (txtContrasena.Text == "ElAdmin")
-                {                    
+                {
                     this.Hide();
-                    frmPantallaPrincipal pantalla = new frmPantallaPrincipal();
-                    pantalla.Show();
+                    frmPantallaPrincipal bienvenida = new frmPantallaPrincipal();
+                    bienvenida.Show();
                     pbxContra.IconColor = Color.Green;
                 }
                 else
@@ -79,21 +82,152 @@ namespace GUI
                 pbxUser.IconColor = Color.Red;
             }
         }
+        private void txtContrasena_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar==Convert.ToChar(Keys.Enter))
+            {
+                if (txtUsuario.Text == "ADMIN")
+                {
+                    if (txtContrasena.Text == "ElAdmin")
+                    {
+                        this.Hide();
+                        frmPantallaPrincipal bienvenida = new frmPantallaPrincipal();
+                        bienvenida.Show();
+                        pbxContra.IconColor = Color.Green;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Contraseña no valida", "LOGIN", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        pbxContra.IconColor = Color.Red;
+                    }
+                    pbxUser.IconColor = Color.Green;
+
+                }
+                else
+                {
+                    MessageBox.Show("Usuario no valido", "LOGIN", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    pbxUser.IconColor = Color.Red;
+                }
+            }
+        }
 
         private void btnRegistrarme_Click(object sender, EventArgs e)
         {
             pnlDeAcceso.Visible = false;
             pnlRegistro.Visible = true;
+            btnRegresar.Visible = true;
 
         }
         private void btnRegistrarNuevoUsuario_Click(object sender, EventArgs e)
         {
+            Regex reNombre = new Regex("^[a-zA-Z]*$", RegexOptions.Compiled);
+            if (!reNombre.IsMatch(txtNombre.Text))
+            {
+                errorProvider1.SetError(txtNombre, "Debe colocar un nombre valido");
+                txtNombre.Focus();
+                return;
+            }
+            errorProvider1.SetError(txtNombre, "");
+
+            Regex reApellido = new Regex("^[a-zA-Z]*$", RegexOptions.Compiled);
+            if (!reApellido.IsMatch(txtApPaterno.Text))
+            {
+                errorProvider1.SetError(txtApPaterno, "Debe colocar un apellido valido");
+                txtApPaterno.Focus();
+                return;
+            }
+            errorProvider1.SetError(txtApPaterno, "");
+
+            if (!reApellido.IsMatch(txtApMaterno.Text))
+            {
+                errorProvider1.SetError(txtApMaterno, "Debe colocar un apellido valido");
+                txtApMaterno.Focus();
+                return;
+            }
+            errorProvider1.SetError(txtApMaterno, "");
+
+            Regex reCurp = new Regex("^.*(?=.{18})(?=.*[0-9])(?=.*[A-ZÑ]).*$", RegexOptions.Compiled);
+            if (!reCurp.IsMatch(txtCurp.Text))
+            {
+                errorProvider1.SetError(txtCurp, "Debe colocar una curp  valida");
+                txtCurp.Focus();
+                return;
+            }
+            errorProvider1.SetError(txtCurp, "");
+
+            Regex reTelefono = new Regex("[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]", RegexOptions.Compiled);
+            if (!reTelefono.IsMatch(txtTelefono.Text))
+            {
+                errorProvider1.SetError(txtTelefono, "Debe colocar un telefono valido");
+                txtTelefono.Focus();
+                return;
+            }
+            errorProvider1.SetError(txtTelefono, "");
+
+            Regex reUsuario = new Regex("[A-Z]{3}[0-9]{2}[A-Z0-9]{1}[.]*", RegexOptions.Compiled);
+            if (!reUsuario.IsMatch(txtUsuarioRegistrado.Text))
+            {
+                errorProvider1.SetError(txtUsuarioRegistrado, "Debe colocar un nombre de usuario valido");
+                txtUsuarioRegistrado.Focus();
+                return;
+            }
+            errorProvider1.SetError(txtUsuarioRegistrado, "");
+
+            Regex reEmail = new Regex(@"^(([^<>()[\]\\.,;:\s@\""]+"
+                                    + @"(\.[^<>()[\]\\.,;:\s@\""]+)*)|(\"".+\""))@"
+                                    + @"((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}]"
+                                    + @"\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+"
+                                    + @"[a-zA-Z]{2,}))$", RegexOptions.Compiled);
+
+            if (!reEmail.IsMatch(txtCorreo.Text))
+            {
+                errorProvider1.SetError(txtCorreo, "Debe colocar una una direccion de correo valida");
+                txtCorreo.Focus();
+                return;
+            }
+            errorProvider1.SetError(txtCorreo, "");
+
+            
             if (iconContrasena.IconColor == Color.Green)
             {
+
                 pnlDeAcceso.Visible = true;
                 pnlRegistro.Visible = false;
+                btnRegresar.Visible = false;
+                iconContrasena.IconColor = Color.White;
+                LimpiarValidacion();
             }
 
+        }
+        private void LimpiarValidacion()
+        {
+            txtNombre.Text = "";
+            txtApPaterno.Text = "";
+            txtApMaterno.Text = "";
+            txtCurp.Text = "";
+            txtTelefono.Text = "";
+            txtUsuarioRegistrado.Text = "";
+            txtCorreo.Text = "";
+            txtContrasenaRegistrada.Text = "";
+            txtConfirmarContra.Text = "";
+        }
+        private void txtConfirmarContra_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                if (iconContrasena.IconColor == Color.Green)
+                {
+                    pnlDeAcceso.Visible = true;
+                    pnlRegistro.Visible = false;
+                    btnRegresar.Visible = false;
+                }
+            }
+        }
+        private void btnRegresar_Click(object sender, EventArgs e)
+        {
+            pnlDeAcceso.Visible = true;
+            pnlRegistro.Visible = false;
+            btnRegresar.Visible = false;
         }
         private void lklOlvidoContra_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -120,8 +254,8 @@ namespace GUI
                 txtContrasena.UseSystemPasswordChar = true;
             btnMostarC.Visible = true;
             btnOcultarC.Visible = false;
-        }        
-        
+        }
+
         //Mensajes de ayuda al usuario
         public void mostrarMensajes()
         {
@@ -133,58 +267,36 @@ namespace GUI
             this.ttpHelp.SetToolTip(this.btnOcultarC, "Preciona click para ocultar la contraseña");
             this.ttpHelp.SetToolTip(this.btnCerrar, "Preciona click cerrar el programa");
             this.ttpHelp.SetToolTip(this.btnMinimizar, "Preciona click minimizar la ventana");
+            this.ttpHelp.SetToolTip(this.btnRegresar, "Regresar");
         }
 
         #endregion        
 
         #region metodos
-        public void abrirForm<Miform>() where Miform : Form, new()
+        private void comparacionContrasenaR()
         {
-            pnlDeAcceso.Visible = false;
-            Form formulario=null;
-            formulario = pnlContenedor.Controls.OfType<Miform>().FirstOrDefault();
 
-            if (formulario == null)
-            {
-                formulario = new Miform();
-                formulario.TopLevel = false;
-                formulario.Dock = DockStyle.Fill;
-                pnlContenedor.Controls.Add(formulario);
-                pnlContenedor.Tag = formulario;
-                this.DoubleBuffered = true;
-                formulario.Show();
-                formulario.BringToFront();
-            }
-            else
-            {
-                formulario.BringToFront();
-            }
-            
-        }
-        private void comparacionContrasenaR()            
-        {            
-
-            if(txtContrasenaRegistrada.Text == txtConfirmarContra.Text)
+            if (txtContrasenaRegistrada.Text == txtConfirmarContra.Text)
             {
                 iconContrasena.IconColor = Color.Green;
-                
+
             }
-            else if(txtConfirmarContra.Text == "CONTRASEÑA" & txtContrasenaRegistrada.Text == "CONFIRMAR CONTRASEÑA" )
+            else if (txtConfirmarContra.Text == "CONTRASEÑA" & txtContrasenaRegistrada.Text == "CONFIRMAR CONTRASEÑA")
             {
                 iconContrasena.IconColor = Color.White;
-                
+
             }
             else if (txtConfirmarContra.Text == "" & txtContrasenaRegistrada.Text == "")
             {
-                iconContrasena.IconColor = Color.White;                ;
+                iconContrasena.IconColor = Color.White; ;
             }
-            else if(txtConfirmarContra.Text != txtContrasenaRegistrada.Text)
-            {                     
-                MessageBox.Show("Las contraseñas no coinciden", "LOGIN",MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else if (txtConfirmarContra.Text != txtContrasenaRegistrada.Text)
+            {
+                MessageBox.Show("Las contraseñas no coinciden", "LOGIN", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 iconContrasena.IconColor = Color.Red;
             }
-            
-            
+
+
 
 
         }
@@ -192,7 +304,6 @@ namespace GUI
 
         #endregion
 
-        
         #region enter y leave
         //enter
         private void txtUsuario_Enter(object sender, EventArgs e)
@@ -202,7 +313,7 @@ namespace GUI
                 txtUsuario.Text = "";
                 txtUsuario.ForeColor = Color.White;
             }
-        }       
+        }
         private void txtContrasena_Enter(object sender, EventArgs e)
         {
             if (txtContrasena.Text == "CONTRASEÑA")
@@ -212,14 +323,14 @@ namespace GUI
                 txtContrasena.UseSystemPasswordChar = true;
             }
         }
-        
+
         private void txtNombre_Enter(object sender, EventArgs e)
         {
             if (txtNombre.Text == "NOMBRE")
             {
                 txtNombre.Text = "";
                 txtNombre.ForeColor = Color.White;
-                
+
             }
         }
 
@@ -229,7 +340,7 @@ namespace GUI
             {
                 txtApPaterno.Text = "";
                 txtApPaterno.ForeColor = Color.White;
-                
+
             }
         }
 
@@ -239,7 +350,7 @@ namespace GUI
             {
                 txtApMaterno.Text = "";
                 txtApMaterno.ForeColor = Color.White;
-                
+
             }
         }
 
@@ -281,6 +392,22 @@ namespace GUI
                 txtConfirmarContra.Text = "";
                 txtConfirmarContra.ForeColor = Color.White;
                 txtConfirmarContra.UseSystemPasswordChar = false;
+            }
+        }
+        private void txtCurp_Enter(object sender, EventArgs e)
+        {
+            if (txtCurp.Text == "CURP")
+            {
+                txtCurp.Text = "";
+                txtCurp.ForeColor = Color.White;
+            }
+        }
+        private void txtTelefono_Enter(object sender, EventArgs e)
+        {
+            if (txtTelefono.Text == "TELÉFONO")
+            {
+                txtTelefono.Text = "";
+                txtTelefono.ForeColor = Color.White;
             }
         }
         //leave
@@ -357,7 +484,7 @@ namespace GUI
                 txtContrasenaRegistrada.UseSystemPasswordChar = false;
             }
             else
-            {                
+            {
                 txtConfirmarContra.Focus();
             }
         }
@@ -372,18 +499,40 @@ namespace GUI
             }
             else
             {
-                
+
                 btnRegistrarNuevoUsuario.Focus();
             }
 
-            if(txtConfirmarContra.Text != "CONFIRMAR CONTRASEÑA"& txtConfirmarContra.Text != " ")
-            {                               
-                comparacionContrasenaR();               
+            if (txtConfirmarContra.Text != "CONFIRMAR CONTRASEÑA" & txtConfirmarContra.Text != " ")
+            {
+                comparacionContrasenaR();
             }
-           
+
         }
+        private void txtCurp_Leave(object sender, EventArgs e)
+        {
+            if (txtCurp.Text == "")
+            {
+                txtCurp.Text = "CURP";
+                txtCurp.ForeColor = Color.Gray;
+            }
+        }
+
+        private void txtTelefono_Leave(object sender, EventArgs e)
+        {
+            if (txtTelefono.Text == "")
+            {
+                txtTelefono.Text = "TELÉFONO";
+                txtTelefono.ForeColor = Color.Gray;
+            }
+        }
+
+
+
+
+
         #endregion
 
         
-    }
+    } 
 }

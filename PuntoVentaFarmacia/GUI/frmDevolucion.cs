@@ -22,5 +22,36 @@ namespace GUI
             lblHora.Text = "Hora: " + DateTime.Now.ToLongTimeString();
             lblFecha.Text = "Fecha: " + DateTime.Now.ToLongDateString();
         }
+        #region botones
+
+        private void btnAgregarProducto_Click(object sender, EventArgs e)
+        {
+            limpiarAgregado();
+        }
+        private void btnBuscarProducto_Click(object sender, EventArgs e)
+        {
+            limpiarBusqueda();
+        }
+        #endregion
+
+        #region limpiar controles
+        private void limpiarAgregado()
+        {
+            nudLote.Value = 0;
+            cmbNombreProducto.Text = "";
+            nudNuevoPrecio.Value = 0;
+            nudCantidad.Value = 0;
+            txtMotivo.Text = "";
+        }
+        private void limpiarBusqueda()
+        {
+            nudBusLote.Value = 0;
+            cmbBusNombreProducto.Text = "";
+            cmbBusNombreProducto.Text = "";
+            cmbBusTipoProducto.Text = "";
+        }
+        #endregion
+
+
     }
 }

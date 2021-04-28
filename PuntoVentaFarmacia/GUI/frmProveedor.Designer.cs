@@ -30,12 +30,6 @@ namespace GUI
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblHora = new System.Windows.Forms.Label();
             this.lblFecha = new System.Windows.Forms.Label();
@@ -43,64 +37,48 @@ namespace GUI
             this.lblProveedores = new System.Windows.Forms.Label();
             this.ttpHelp = new System.Windows.Forms.ToolTip(this.components);
             this.tmrFech = new System.Windows.Forms.Timer(this.components);
+            this.gbxDatosCliente = new System.Windows.Forms.GroupBox();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnAgregarProveedor = new System.Windows.Forms.Button();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.gbxBusquedaCompras = new System.Windows.Forms.GroupBox();
+            this.rbtnNoOfrece = new System.Windows.Forms.RadioButton();
+            this.rbtnSiOfrece = new System.Windows.Forms.RadioButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnActualizar = new System.Windows.Forms.Button();
+            this.btnEliminarProveedor = new System.Windows.Forms.Button();
+            this.cmbBusProveedor = new System.Windows.Forms.ComboBox();
+            this.btnBuscarProveedor = new System.Windows.Forms.Button();
+            this.dgvResBusquedaProd = new System.Windows.Forms.DataGridView();
+            this.Lote = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcióndelproducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PuntosParaCanjeo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PuntosDeCanjeo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaCad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ReqPatente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblBusNombreProducto = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.gbxDatosCliente.SuspendLayout();
+            this.gbxBusquedaCompras.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvResBusquedaProd)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(419, 189);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(66, 13);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Descripción:";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(508, 186);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 9;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(370, 91);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(115, 13);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Nombre del proveedor:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(508, 88);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 7;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label4.Location = new System.Drawing.Point(433, 145);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 13);
-            this.label4.TabIndex = 25;
-            this.label4.Text = "Telefono:";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(508, 142);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 24;
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(68)))), ((int)(((byte)(79)))));
             this.panel2.Controls.Add(this.lblHora);
             this.panel2.Controls.Add(this.lblFecha);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -135,7 +113,7 @@ namespace GUI
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(68)))), ((int)(((byte)(79)))));
             this.panel1.Controls.Add(this.lblProveedores);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -159,20 +137,324 @@ namespace GUI
             this.tmrFech.Enabled = true;
             this.tmrFech.Tick += new System.EventHandler(this.tmrFech_Tick);
             // 
+            // gbxDatosCliente
+            // 
+            this.gbxDatosCliente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbxDatosCliente.Controls.Add(this.btnCancelar);
+            this.gbxDatosCliente.Controls.Add(this.btnAgregarProveedor);
+            this.gbxDatosCliente.Controls.Add(this.txtNombre);
+            this.gbxDatosCliente.Controls.Add(this.label7);
+            this.gbxDatosCliente.Controls.Add(this.txtTelefono);
+            this.gbxDatosCliente.Controls.Add(this.label9);
+            this.gbxDatosCliente.Controls.Add(this.label10);
+            this.gbxDatosCliente.Controls.Add(this.txtDescripcion);
+            this.gbxDatosCliente.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.gbxDatosCliente.Location = new System.Drawing.Point(12, 39);
+            this.gbxDatosCliente.Name = "gbxDatosCliente";
+            this.gbxDatosCliente.Size = new System.Drawing.Size(1056, 99);
+            this.gbxDatosCliente.TabIndex = 41;
+            this.gbxDatosCliente.TabStop = false;
+            this.gbxDatosCliente.Text = "Datos Del Proveedor";
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnCancelar.FlatAppearance.BorderSize = 0;
+            this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Malgun Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.Color.Transparent;
+            this.btnCancelar.Location = new System.Drawing.Point(851, 65);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(184, 27);
+            this.btnCancelar.TabIndex = 45;
+            this.btnCancelar.Text = "CANCELAR";
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            // 
+            // btnAgregarProveedor
+            // 
+            this.btnAgregarProveedor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAgregarProveedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnAgregarProveedor.FlatAppearance.BorderSize = 0;
+            this.btnAgregarProveedor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SlateBlue;
+            this.btnAgregarProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarProveedor.Font = new System.Drawing.Font("Malgun Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarProveedor.ForeColor = System.Drawing.Color.Transparent;
+            this.btnAgregarProveedor.Location = new System.Drawing.Point(614, 65);
+            this.btnAgregarProveedor.Name = "btnAgregarProveedor";
+            this.btnAgregarProveedor.Size = new System.Drawing.Size(184, 26);
+            this.btnAgregarProveedor.TabIndex = 44;
+            this.btnAgregarProveedor.Text = "AGREGAR PROVEEDOR";
+            this.btnAgregarProveedor.UseVisualStyleBackColor = false;
+            this.btnAgregarProveedor.Click += new System.EventHandler(this.btnAgregarProveedor_Click);
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(94, 19);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(248, 20);
+            this.txtNombre.TabIndex = 38;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label7.Location = new System.Drawing.Point(41, 19);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(47, 13);
+            this.label7.TabIndex = 39;
+            this.label7.Text = "Nombre:";
+            // 
+            // txtTelefono
+            // 
+            this.txtTelefono.Location = new System.Drawing.Point(406, 19);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(100, 20);
+            this.txtTelefono.TabIndex = 40;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label9.Location = new System.Drawing.Point(348, 22);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(52, 13);
+            this.label9.TabIndex = 41;
+            this.label9.Text = "Telefono:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label10.Location = new System.Drawing.Point(542, 22);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(66, 13);
+            this.label10.TabIndex = 43;
+            this.label10.Text = "Descripción:";
+            // 
+            // txtDescripcion
+            // 
+            this.txtDescripcion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtDescripcion.Location = new System.Drawing.Point(614, 16);
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(421, 20);
+            this.txtDescripcion.TabIndex = 42;
+            // 
+            // gbxBusquedaCompras
+            // 
+            this.gbxBusquedaCompras.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbxBusquedaCompras.Controls.Add(this.rbtnNoOfrece);
+            this.gbxBusquedaCompras.Controls.Add(this.rbtnSiOfrece);
+            this.gbxBusquedaCompras.Controls.Add(this.label1);
+            this.gbxBusquedaCompras.Controls.Add(this.btnActualizar);
+            this.gbxBusquedaCompras.Controls.Add(this.btnEliminarProveedor);
+            this.gbxBusquedaCompras.Controls.Add(this.cmbBusProveedor);
+            this.gbxBusquedaCompras.Controls.Add(this.btnBuscarProveedor);
+            this.gbxBusquedaCompras.Controls.Add(this.dgvResBusquedaProd);
+            this.gbxBusquedaCompras.Controls.Add(this.lblBusNombreProducto);
+            this.gbxBusquedaCompras.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.gbxBusquedaCompras.Location = new System.Drawing.Point(12, 157);
+            this.gbxBusquedaCompras.Name = "gbxBusquedaCompras";
+            this.gbxBusquedaCompras.Size = new System.Drawing.Size(1056, 419);
+            this.gbxBusquedaCompras.TabIndex = 49;
+            this.gbxBusquedaCompras.TabStop = false;
+            this.gbxBusquedaCompras.Text = "Opciones";
+            // 
+            // rbtnNoOfrece
+            // 
+            this.rbtnNoOfrece.AutoSize = true;
+            this.rbtnNoOfrece.Location = new System.Drawing.Point(536, 36);
+            this.rbtnNoOfrece.Name = "rbtnNoOfrece";
+            this.rbtnNoOfrece.Size = new System.Drawing.Size(41, 17);
+            this.rbtnNoOfrece.TabIndex = 56;
+            this.rbtnNoOfrece.TabStop = true;
+            this.rbtnNoOfrece.Text = "NO";
+            this.rbtnNoOfrece.UseVisualStyleBackColor = true;
+            // 
+            // rbtnSiOfrece
+            // 
+            this.rbtnSiOfrece.AutoSize = true;
+            this.rbtnSiOfrece.Location = new System.Drawing.Point(487, 36);
+            this.rbtnSiOfrece.Name = "rbtnSiOfrece";
+            this.rbtnSiOfrece.Size = new System.Drawing.Size(35, 17);
+            this.rbtnSiOfrece.TabIndex = 55;
+            this.rbtnSiOfrece.TabStop = true;
+            this.rbtnSiOfrece.Text = "SI";
+            this.rbtnSiOfrece.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label1.Location = new System.Drawing.Point(331, 38);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(150, 13);
+            this.label1.TabIndex = 54;
+            this.label1.Text = "Colocar productos que ofrece:";
+            // 
+            // btnActualizar
+            // 
+            this.btnActualizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnActualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnActualizar.FlatAppearance.BorderSize = 0;
+            this.btnActualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SlateBlue;
+            this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualizar.Font = new System.Drawing.Font("Malgun Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizar.ForeColor = System.Drawing.Color.Transparent;
+            this.btnActualizar.Location = new System.Drawing.Point(451, 84);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(209, 27);
+            this.btnActualizar.TabIndex = 48;
+            this.btnActualizar.Text = "ACTUALIZAR PROVEEDOR";
+            this.btnActualizar.UseVisualStyleBackColor = false;
+            // 
+            // btnEliminarProveedor
+            // 
+            this.btnEliminarProveedor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEliminarProveedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnEliminarProveedor.FlatAppearance.BorderSize = 0;
+            this.btnEliminarProveedor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btnEliminarProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminarProveedor.Font = new System.Drawing.Font("Malgun Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarProveedor.ForeColor = System.Drawing.Color.Transparent;
+            this.btnEliminarProveedor.Location = new System.Drawing.Point(841, 84);
+            this.btnEliminarProveedor.Name = "btnEliminarProveedor";
+            this.btnEliminarProveedor.Size = new System.Drawing.Size(194, 27);
+            this.btnEliminarProveedor.TabIndex = 47;
+            this.btnEliminarProveedor.Text = "ELIMINAR PROVEEDOR";
+            this.btnEliminarProveedor.UseVisualStyleBackColor = false;
+            // 
+            // cmbBusProveedor
+            // 
+            this.cmbBusProveedor.FormattingEnabled = true;
+            this.cmbBusProveedor.Location = new System.Drawing.Point(135, 35);
+            this.cmbBusProveedor.Name = "cmbBusProveedor";
+            this.cmbBusProveedor.Size = new System.Drawing.Size(181, 21);
+            this.cmbBusProveedor.TabIndex = 2;
+            // 
+            // btnBuscarProveedor
+            // 
+            this.btnBuscarProveedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnBuscarProveedor.FlatAppearance.BorderSize = 0;
+            this.btnBuscarProveedor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SlateBlue;
+            this.btnBuscarProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscarProveedor.Font = new System.Drawing.Font("Malgun Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscarProveedor.ForeColor = System.Drawing.Color.Transparent;
+            this.btnBuscarProveedor.Location = new System.Drawing.Point(14, 84);
+            this.btnBuscarProveedor.Name = "btnBuscarProveedor";
+            this.btnBuscarProveedor.Size = new System.Drawing.Size(173, 27);
+            this.btnBuscarProveedor.TabIndex = 6;
+            this.btnBuscarProveedor.Text = "BUSCAR PROVEEDOR";
+            this.btnBuscarProveedor.UseVisualStyleBackColor = false;
+            this.btnBuscarProveedor.Click += new System.EventHandler(this.btnBuscarProveedor_Click);
+            // 
+            // dgvResBusquedaProd
+            // 
+            this.dgvResBusquedaProd.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvResBusquedaProd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvResBusquedaProd.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Lote,
+            this.Nombre,
+            this.Tipo,
+            this.Descripcióndelproducto,
+            this.Precio,
+            this.Cantidad,
+            this.PuntosParaCanjeo,
+            this.PuntosDeCanjeo,
+            this.FechaCad,
+            this.ReqPatente,
+            this.Status});
+            this.dgvResBusquedaProd.Location = new System.Drawing.Point(14, 126);
+            this.dgvResBusquedaProd.Name = "dgvResBusquedaProd";
+            this.dgvResBusquedaProd.Size = new System.Drawing.Size(1021, 284);
+            this.dgvResBusquedaProd.TabIndex = 25;
+            // 
+            // Lote
+            // 
+            this.Lote.HeaderText = "Lote";
+            this.Lote.Name = "Lote";
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            // 
+            // Tipo
+            // 
+            this.Tipo.HeaderText = "Tipo";
+            this.Tipo.Name = "Tipo";
+            // 
+            // Descripcióndelproducto
+            // 
+            this.Descripcióndelproducto.HeaderText = "Descripción del producto";
+            this.Descripcióndelproducto.Name = "Descripcióndelproducto";
+            // 
+            // Precio
+            // 
+            this.Precio.HeaderText = "Precio";
+            this.Precio.Name = "Precio";
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            // 
+            // PuntosParaCanjeo
+            // 
+            this.PuntosParaCanjeo.HeaderText = "Puntos para canjeo";
+            this.PuntosParaCanjeo.Name = "PuntosParaCanjeo";
+            // 
+            // PuntosDeCanjeo
+            // 
+            this.PuntosDeCanjeo.HeaderText = "Puntos de canjeo";
+            this.PuntosDeCanjeo.Name = "PuntosDeCanjeo";
+            // 
+            // FechaCad
+            // 
+            this.FechaCad.HeaderText = "Fecha de caducidad";
+            this.FechaCad.Name = "FechaCad";
+            // 
+            // ReqPatente
+            // 
+            this.ReqPatente.HeaderText = "Requiere patente";
+            this.ReqPatente.Name = "ReqPatente";
+            // 
+            // Status
+            // 
+            this.Status.HeaderText = "Status";
+            this.Status.Name = "Status";
+            // 
+            // lblBusNombreProducto
+            // 
+            this.lblBusNombreProducto.AutoSize = true;
+            this.lblBusNombreProducto.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblBusNombreProducto.Location = new System.Drawing.Point(16, 38);
+            this.lblBusNombreProducto.Name = "lblBusNombreProducto";
+            this.lblBusNombreProducto.Size = new System.Drawing.Size(116, 13);
+            this.lblBusNombreProducto.TabIndex = 8;
+            this.lblBusNombreProducto.Text = "Nombre del Proveedor:";
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // frmProveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(1080, 615);
+            this.Controls.Add(this.gbxBusquedaCompras);
+            this.Controls.Add(this.gbxDatosCliente);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmProveedor";
             this.Text = "Proveedor";
@@ -180,18 +462,17 @@ namespace GUI
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.gbxDatosCliente.ResumeLayout(false);
+            this.gbxDatosCliente.PerformLayout();
+            this.gbxBusquedaCompras.ResumeLayout(false);
+            this.gbxBusquedaCompras.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvResBusquedaProd)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblHora;
         private System.Windows.Forms.Label lblFecha;
@@ -199,5 +480,36 @@ namespace GUI
         private System.Windows.Forms.Label lblProveedores;
         private System.Windows.Forms.ToolTip ttpHelp;
         private System.Windows.Forms.Timer tmrFech;
+        private System.Windows.Forms.GroupBox gbxDatosCliente;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnAgregarProveedor;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtTelefono;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtDescripcion;
+        private System.Windows.Forms.GroupBox gbxBusquedaCompras;
+        private System.Windows.Forms.Button btnActualizar;
+        private System.Windows.Forms.Button btnEliminarProveedor;
+        private System.Windows.Forms.ComboBox cmbBusProveedor;
+        private System.Windows.Forms.Button btnBuscarProveedor;
+        private System.Windows.Forms.DataGridView dgvResBusquedaProd;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Lote;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcióndelproducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PuntosParaCanjeo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PuntosDeCanjeo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaCad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ReqPatente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
+        private System.Windows.Forms.Label lblBusNombreProducto;
+        private System.Windows.Forms.RadioButton rbtnNoOfrece;
+        private System.Windows.Forms.RadioButton rbtnSiOfrece;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

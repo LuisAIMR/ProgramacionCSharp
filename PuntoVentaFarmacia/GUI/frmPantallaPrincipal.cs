@@ -65,7 +65,7 @@ namespace GUI
         #region Menu Lateral 
         //Metodo para abrir formularios 
 
-        private void abrirForm<Miform>() where Miform: Form,new()
+        public void abrirForm<Miform>() where Miform: Form,new()
         {
             Form formulario;
             formulario = pnlContenedor.Controls.OfType<Miform>().FirstOrDefault();
@@ -121,6 +121,7 @@ namespace GUI
             btnHorarios.ForeColor = Color.White;
             btnDevoluciones.ForeColor = Color.White;
             btnProveedores.ForeColor = Color.White;
+            btnBajas.ForeColor = Color.White;
 
             btnProducto.BackColor = Color.FromArgb(26, 32, 40);
             btnClientes.BackColor = Color.FromArgb(26, 32, 40);
@@ -131,7 +132,7 @@ namespace GUI
             btnHorarios.BackColor = Color.FromArgb(26, 32, 40);
             btnDevoluciones.BackColor = Color.FromArgb(26, 32, 40);
             btnProveedores.BackColor = Color.FromArgb(26, 32, 40);
-
+            btnBajas.BackColor = Color.FromArgb(26, 32, 40);
 
             btnProducto.IconColor = Color.White;
             btnClientes.IconColor = Color.White;
@@ -142,6 +143,7 @@ namespace GUI
             btnHorarios.IconColor = Color.White;
             btnDevoluciones.IconColor = Color.White;
             btnProveedores.IconColor = Color.White;
+            btnBajas.IconColor = Color.White;
         }
         private void ocultarTexto()
         {            
@@ -154,6 +156,7 @@ namespace GUI
             btnHorarios.Text = "";
             btnDevoluciones.Text = "";
             btnProveedores.Text = "";
+            btnBajas.Text = "";
         }
         private void verTexto()
         {
@@ -166,6 +169,7 @@ namespace GUI
             btnHorarios.Text = "Horarios";
             btnDevoluciones.Text = "Devoluciones";
             btnProveedores.Text = "Proveedores";
+            btnBajas.Text = "Bajas";
         }
         private void reducirMenuVertical()
         {
@@ -195,21 +199,7 @@ namespace GUI
             }
         }
         private void ocultarSubmenus()
-        {
-            if (pnlSubmenuProductos.Visible == true)
-                pnlSubmenuProductos.Visible = false;
-
-            if (pnlSubmenuVentas.Visible == true)
-                pnlSubmenuVentas.Visible = false;
-
-            if (pnlSubmenuClientes.Visible == true)
-                pnlSubmenuClientes.Visible = false;
-
-            if (pnlSubmenuEmpleados.Visible == true)
-                pnlSubmenuEmpleados.Visible = false;
-
-            if (pnlSubmenuCompras.Visible == true)
-                pnlSubmenuCompras.Visible = false;
+        {                      
 
             if (pnlSubmenuReportes.Visible == true)
                 pnlSubmenuReportes.Visible = false;
@@ -228,7 +218,7 @@ namespace GUI
             {
                 submenu.Visible = false;
             }
-        }
+        }           
         //Uso de botones\\
         private void btnLogo_Click(object sender, EventArgs e)
         {
@@ -238,8 +228,7 @@ namespace GUI
         }
         private void btnProducto_Click(object sender, EventArgs e)
         {
-            abrirForm<frmProducto>();
-            mostrarSubmenu(pnlSubmenuProductos);
+            abrirForm<frmProducto>();            
             SeguirBoton((FontAwesome.Sharp.IconButton)sender);
             seleccionarBoton((FontAwesome.Sharp.IconButton)sender);
             
@@ -248,7 +237,7 @@ namespace GUI
         private void btnClientes_Click(object sender, EventArgs e)
         {
             abrirForm<frmCliente>();
-            mostrarSubmenu(pnlSubmenuClientes);
+            
             SeguirBoton((FontAwesome.Sharp.IconButton)sender);
             seleccionarBoton((FontAwesome.Sharp.IconButton)sender);
            
@@ -257,7 +246,7 @@ namespace GUI
         private void btnCompras_Click(object sender, EventArgs e)
         {
             abrirForm<frmCompra>();
-            mostrarSubmenu(pnlSubmenuCompras);
+           
             SeguirBoton((FontAwesome.Sharp.IconButton)sender);
             seleccionarBoton((FontAwesome.Sharp.IconButton)sender);
             
@@ -265,8 +254,7 @@ namespace GUI
 
         private void btnVentas_Click(object sender, EventArgs e)
         {
-            abrirForm<frmVenta>();
-            mostrarSubmenu(pnlSubmenuVentas);
+            abrirForm<frmVenta>();          
             SeguirBoton((FontAwesome.Sharp.IconButton)sender);
             seleccionarBoton((FontAwesome.Sharp.IconButton)sender);
            
@@ -298,8 +286,7 @@ namespace GUI
 
         private void btnEmpleados_Click(object sender, EventArgs e)
         {
-            abrirForm<frmEmpleado>();
-            mostrarSubmenu(pnlSubmenuEmpleados);
+            abrirForm<frmEmpleado>();           
             SeguirBoton((FontAwesome.Sharp.IconButton)sender);
             seleccionarBoton((FontAwesome.Sharp.IconButton)sender);
             
@@ -326,6 +313,109 @@ namespace GUI
 
         #endregion
 
+        #region Eventos key press
+        private void btnVentas_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(Convert.ToInt32(e.KeyChar) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.N))            
+            {
+                abrirForm<frmVenta>();
+                SeguirBoton((FontAwesome.Sharp.IconButton)sender);
+                seleccionarBoton((FontAwesome.Sharp.IconButton)sender);
+            }
+        }
+
+        //private void btnProducto_KeyPress(object sender, KeyPressEventArgs e)
+        //{
+        //    if (e.KeyChar == Convert.ToChar(Keys.Shift) + Convert.ToChar(Keys.NumPad2))
+        //    {
+        //        abrirForm<frmProducto>();
+        //        SeguirBoton((FontAwesome.Sharp.IconButton)sender);
+        //        seleccionarBoton((FontAwesome.Sharp.IconButton)sender);
+        //    }
+        //}
+
+        //private void btnClientes_KeyPress(object sender, KeyPressEventArgs e)
+        //{
+        //    if (e.KeyChar == Convert.ToChar(Keys.Shift) + Convert.ToChar(Keys.NumPad3))
+        //    {
+        //        abrirForm<frmCliente>();
+
+        //        SeguirBoton((FontAwesome.Sharp.IconButton)sender);
+        //        seleccionarBoton((FontAwesome.Sharp.IconButton)sender);
+        //    }
+        //}
+
+        //private void btnEmpleados_KeyPress(object sender, KeyPressEventArgs e)
+        //{
+        //    if (e.KeyChar == Convert.ToChar(Keys.Shift) + Convert.ToChar(Keys.NumPad4))
+        //    {
+        //        abrirForm<frmEmpleado>();
+        //        SeguirBoton((FontAwesome.Sharp.IconButton)sender);
+        //        seleccionarBoton((FontAwesome.Sharp.IconButton)sender);
+        //    }
+        //}
+
+        //private void btnCompras_KeyPress(object sender, KeyPressEventArgs e)
+        //{
+        //    if (e.KeyChar == Convert.ToChar(Keys.Shift) + Convert.ToChar(Keys.NumPad5))
+        //    {
+        //        abrirForm<frmCompra>();
+
+        //        SeguirBoton((FontAwesome.Sharp.IconButton)sender);
+        //        seleccionarBoton((FontAwesome.Sharp.IconButton)sender);
+        //    }
+        //}
+
+        //private void btnReporte_KeyPress(object sender, KeyPressEventArgs e)
+        //{
+        //    if (e.KeyChar == Convert.ToChar(Keys.Shift) + Convert.ToChar(Keys.NumPad6))
+        //    {
+        //        mostrarSubmenu(pnlSubmenuReportes);
+        //        SeguirBoton((FontAwesome.Sharp.IconButton)sender);
+        //        seleccionarBoton((FontAwesome.Sharp.IconButton)sender);
+        //    }
+        //}
+
+        //private void btnHorarios_KeyPress(object sender, KeyPressEventArgs e)
+        //{
+        //    if (e.KeyChar == Convert.ToChar(Keys.Shift) + Convert.ToChar(Keys.NumPad7))
+        //    {
+        //        abrirForm<frmHorarios>();
+        //        SeguirBoton((FontAwesome.Sharp.IconButton)sender);
+        //        seleccionarBoton((FontAwesome.Sharp.IconButton)sender);
+        //    }
+        //}
+
+        //private void btnDevoluciones_KeyPress(object sender, KeyPressEventArgs e)
+        //{
+        //    if (e.KeyChar == Convert.ToChar(Keys.Shift) + Convert.ToChar(Keys.NumPad8))
+        //    {
+        //        abrirForm<frmDevolucion>();
+        //        SeguirBoton((FontAwesome.Sharp.IconButton)sender);
+        //        seleccionarBoton((FontAwesome.Sharp.IconButton)sender);
+        //    }
+        //}
+
+        //private void btnProveedores_KeyPress(object sender, KeyPressEventArgs e)
+        //{
+        //    if (e.KeyChar == Convert.ToChar(Keys.Shift) + Convert.ToChar(Keys.NumPad9))
+        //    {
+        //        abrirForm<frmProveedor>();
+        //        SeguirBoton((FontAwesome.Sharp.IconButton)sender);
+        //        seleccionarBoton((FontAwesome.Sharp.IconButton)sender);
+        //    }
+        //}
+        //private void btnBajas_KeyPress(object sender, KeyPressEventArgs e)
+        //{
+        //    if (e.KeyChar == Convert.ToChar(Keys.Shift) + Convert.ToChar(Keys.NumPad0))
+        //    {
+        //        abrirForm<frmBaja>();
+        //        SeguirBoton((FontAwesome.Sharp.IconButton)sender);
+        //        seleccionarBoton((FontAwesome.Sharp.IconButton)sender);
+        //    }
+        //}
+        #endregion
+
         #region Otras acciones         
 
         private void btnRegresar_Click(object sender, EventArgs e)
@@ -346,20 +436,22 @@ namespace GUI
 
         public void mostrarMensajes()
         {
-            this.ttpHelp.SetToolTip(this.btnMenu, "Preciona click para ocultar o mostrar el menu vertical");
-            this.ttpHelp.SetToolTip(this.btnRegresar, "Preciona click para regresar");
+            this.ttpHelp.SetToolTip(this.btnMenu, "Preciona click para ocultar o mostrar el menu vertical");            
             this.ttpHelp.SetToolTip(this.btnCerrar, "Preciona click para cerrar el programa");
             this.ttpHelp.SetToolTip(this.btnMinimizar, "Preciona click para minimizar la ventana");
             this.ttpHelp.SetToolTip(this.btnRestaurar, "Preciona click para restaurar la ventana");
             this.ttpHelp.SetToolTip(this.btnMaximizarV, "Preciona click para maximizar la ventana");
-            this.ttpHelp.SetToolTip(this.btnLogo, "Preciona click para ir a la pantalla de inicio");
-            this.ttpHelp.SetToolTip(this.btnProducto, "Preciona click para ir a la sección de productos");
-            this.ttpHelp.SetToolTip(this.btnEmpleados, "Preciona click para ir a la sección de empleados");
-            this.ttpHelp.SetToolTip(this.btnHorarios, "Preciona click para ir a la sección de Horarios");
-            this.ttpHelp.SetToolTip(this.btnClientes, "Preciona click para ir a la sección de clientes");
-            this.ttpHelp.SetToolTip(this.btnCompras, "Preciona click para ir a la sección de compras de productos");
-            this.ttpHelp.SetToolTip(this.btnVentas, "Preciona click para ir a la sección de ventas de productos");
-            this.ttpHelp.SetToolTip(this.btnReporte, "Preciona click para ir a la sección de reportes");
+            this.ttpHelp.SetToolTip(this.btnLogo, "Preciona click para ir a la pantalla de inicio");       
+            this.ttpHelp.SetToolTip(this.btnVentas, "Preciona click para ir a la sección de ventas de productos" + "\n" + "F1");
+            this.ttpHelp.SetToolTip(this.btnProducto, "Preciona click para ir a la sección de productos" + "\n" + "F2");
+            this.ttpHelp.SetToolTip(this.btnClientes, "Preciona click para ir a la sección de clientes" + "\n" + "F3");
+            this.ttpHelp.SetToolTip(this.btnEmpleados, "Preciona click para ir a la sección de empleados" + "\n" + "F4");
+            this.ttpHelp.SetToolTip(this.btnCompras, "Preciona click para ir a la sección de compras de productos" + "\n" + "F5");
+            this.ttpHelp.SetToolTip(this.btnReporte, "Preciona click para ir a la sección de reportes" + "\n" + "F6");
+            this.ttpHelp.SetToolTip(this.btnHorarios, "Preciona click para ir a la sección de Horarios" + "\n" + "F7");
+            this.ttpHelp.SetToolTip(this.btnDevoluciones, "Preciona click para ir a la sección de Devoluciones" + "\n" + "F8");
+            this.ttpHelp.SetToolTip(this.btnProveedores, "Preciona click para ir a la sección de Proveedores" + "\n" + "F9");
+            this.ttpHelp.SetToolTip(this.btnBajas, "Preciona click para ir a la sección de Bajas" + "\n" + "F10");
             this.ttpHelp.SetToolTip(this.btnCerrarSesion, "Preciona click para cerrar sesión");
         }
 
@@ -371,7 +463,14 @@ namespace GUI
         }
 
 
+
+
+
         #endregion
-       
+
+        private void btnVentas_KeyUp(object sender, KeyEventArgs e)
+        {
+            
+        }
     }
 }
