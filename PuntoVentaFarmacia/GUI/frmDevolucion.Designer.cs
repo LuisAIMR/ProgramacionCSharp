@@ -50,6 +50,7 @@ namespace GUI
             this.btnAgregarProducto = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cmbNombreProducto = new System.Windows.Forms.ComboBox();
             this.txtMotivo = new System.Windows.Forms.TextBox();
             this.gbxBusqueda = new System.Windows.Forms.GroupBox();
             this.gbxFiltro = new System.Windows.Forms.GroupBox();
@@ -74,7 +75,6 @@ namespace GUI
             this.FechaCad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ReqPatente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cmbNombreProducto = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudLote)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudNuevoPrecio)).BeginInit();
@@ -305,6 +305,14 @@ namespace GUI
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Añadir";
             // 
+            // cmbNombreProducto
+            // 
+            this.cmbNombreProducto.FormattingEnabled = true;
+            this.cmbNombreProducto.Location = new System.Drawing.Point(141, 73);
+            this.cmbNombreProducto.Name = "cmbNombreProducto";
+            this.cmbNombreProducto.Size = new System.Drawing.Size(171, 21);
+            this.cmbNombreProducto.TabIndex = 42;
+            // 
             // txtMotivo
             // 
             this.txtMotivo.Location = new System.Drawing.Point(143, 193);
@@ -414,8 +422,7 @@ namespace GUI
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnEliminar.FlatAppearance.BorderSize = 0;
             this.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
@@ -447,8 +454,7 @@ namespace GUI
             // 
             // btnActualizar
             // 
-            this.btnActualizar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnActualizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnActualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnActualizar.FlatAppearance.BorderSize = 0;
             this.btnActualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SlateBlue;
@@ -539,14 +545,6 @@ namespace GUI
             // 
             this.Status.HeaderText = "Status";
             this.Status.Name = "Status";
-            // 
-            // cmbNombreProducto
-            // 
-            this.cmbNombreProducto.FormattingEnabled = true;
-            this.cmbNombreProducto.Location = new System.Drawing.Point(141, 73);
-            this.cmbNombreProducto.Name = "cmbNombreProducto";
-            this.cmbNombreProducto.Size = new System.Drawing.Size(171, 21);
-            this.cmbNombreProducto.TabIndex = 42;
             // 
             // frmDevolucion
             // 

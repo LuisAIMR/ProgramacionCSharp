@@ -54,6 +54,10 @@ namespace GUI
             this.ttpHelp = new System.Windows.Forms.ToolTip(this.components);
             this.tmrFech = new System.Windows.Forms.Timer(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtCurp = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.lblCorreo = new System.Windows.Forms.Label();
+            this.txtCorreo = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAgregarEmpleado = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -71,10 +75,6 @@ namespace GUI
             this.txtBusApellidoPerno = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.lblCorreo = new System.Windows.Forms.Label();
-            this.txtCorreo = new System.Windows.Forms.TextBox();
-            this.txtCurp = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -316,6 +316,40 @@ namespace GUI
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "DATOS";
             // 
+            // txtCurp
+            // 
+            this.txtCurp.Location = new System.Drawing.Point(155, 134);
+            this.txtCurp.Name = "txtCurp";
+            this.txtCurp.Size = new System.Drawing.Size(100, 20);
+            this.txtCurp.TabIndex = 51;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label12.Location = new System.Drawing.Point(100, 137);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(32, 13);
+            this.label12.TabIndex = 52;
+            this.label12.Text = "Curp:";
+            // 
+            // lblCorreo
+            // 
+            this.lblCorreo.AutoSize = true;
+            this.lblCorreo.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblCorreo.Location = new System.Drawing.Point(86, 295);
+            this.lblCorreo.Name = "lblCorreo";
+            this.lblCorreo.Size = new System.Drawing.Size(41, 13);
+            this.lblCorreo.TabIndex = 50;
+            this.lblCorreo.Text = "Correo:";
+            // 
+            // txtCorreo
+            // 
+            this.txtCorreo.Location = new System.Drawing.Point(155, 292);
+            this.txtCorreo.Name = "txtCorreo";
+            this.txtCorreo.Size = new System.Drawing.Size(100, 20);
+            this.txtCorreo.TabIndex = 49;
+            // 
             // btnCancelar
             // 
             this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -371,8 +405,7 @@ namespace GUI
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnEliminar.FlatAppearance.BorderSize = 0;
             this.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
@@ -381,15 +414,14 @@ namespace GUI
             this.btnEliminar.ForeColor = System.Drawing.Color.Transparent;
             this.btnEliminar.Location = new System.Drawing.Point(503, 491);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(252, 27);
+            this.btnEliminar.Size = new System.Drawing.Size(234, 27);
             this.btnEliminar.TabIndex = 49;
             this.btnEliminar.Text = "ELIMINAR EMPLEADO";
             this.btnEliminar.UseVisualStyleBackColor = false;
             // 
             // btnActualizar
             // 
-            this.btnActualizar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnActualizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnActualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnActualizar.FlatAppearance.BorderSize = 0;
             this.btnActualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SlateBlue;
@@ -521,40 +553,6 @@ namespace GUI
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // lblCorreo
-            // 
-            this.lblCorreo.AutoSize = true;
-            this.lblCorreo.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblCorreo.Location = new System.Drawing.Point(86, 295);
-            this.lblCorreo.Name = "lblCorreo";
-            this.lblCorreo.Size = new System.Drawing.Size(41, 13);
-            this.lblCorreo.TabIndex = 50;
-            this.lblCorreo.Text = "Correo:";
-            // 
-            // txtCorreo
-            // 
-            this.txtCorreo.Location = new System.Drawing.Point(155, 292);
-            this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(100, 20);
-            this.txtCorreo.TabIndex = 49;
-            // 
-            // txtCurp
-            // 
-            this.txtCurp.Location = new System.Drawing.Point(155, 134);
-            this.txtCurp.Name = "txtCurp";
-            this.txtCurp.Size = new System.Drawing.Size(100, 20);
-            this.txtCurp.TabIndex = 51;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label12.Location = new System.Drawing.Point(100, 137);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(32, 13);
-            this.label12.TabIndex = 52;
-            this.label12.Text = "Curp:";
             // 
             // frmEmpleado
             // 

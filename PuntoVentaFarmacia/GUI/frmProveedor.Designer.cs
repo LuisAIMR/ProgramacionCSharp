@@ -299,14 +299,13 @@ namespace GUI
             // 
             // btnActualizar
             // 
-            this.btnActualizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnActualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnActualizar.FlatAppearance.BorderSize = 0;
             this.btnActualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SlateBlue;
             this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizar.Font = new System.Drawing.Font("Malgun Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActualizar.ForeColor = System.Drawing.Color.Transparent;
-            this.btnActualizar.Location = new System.Drawing.Point(451, 84);
+            this.btnActualizar.Location = new System.Drawing.Point(204, 84);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(209, 27);
             this.btnActualizar.TabIndex = 48;

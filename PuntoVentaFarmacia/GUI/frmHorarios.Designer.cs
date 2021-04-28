@@ -605,8 +605,7 @@ namespace GUI
             // 
             // btnBuscarTurno
             // 
-            this.btnBuscarTurno.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBuscarTurno.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnBuscarTurno.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnBuscarTurno.FlatAppearance.BorderSize = 0;
             this.btnBuscarTurno.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SlateBlue;
@@ -658,8 +657,7 @@ namespace GUI
             // 
             // btnEliminarTurno
             // 
-            this.btnEliminarTurno.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEliminarTurno.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEliminarTurno.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnEliminarTurno.FlatAppearance.BorderSize = 0;
             this.btnEliminarTurno.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
@@ -675,8 +673,7 @@ namespace GUI
             // 
             // btnActualizarTurno
             // 
-            this.btnActualizarTurno.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnActualizarTurno.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnActualizarTurno.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnActualizarTurno.FlatAppearance.BorderSize = 0;
             this.btnActualizarTurno.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SlateBlue;
@@ -1075,8 +1072,7 @@ namespace GUI
             // 
             // btnEliminarHorario
             // 
-            this.btnEliminarHorario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEliminarHorario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEliminarHorario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnEliminarHorario.FlatAppearance.BorderSize = 0;
             this.btnEliminarHorario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
@@ -1092,8 +1088,7 @@ namespace GUI
             // 
             // btnActualizarHorario
             // 
-            this.btnActualizarHorario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnActualizarHorario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnActualizarHorario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnActualizarHorario.FlatAppearance.BorderSize = 0;
             this.btnActualizarHorario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SlateBlue;

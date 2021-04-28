@@ -91,16 +91,16 @@ namespace GUI
             this.lblCantidadProducto = new System.Windows.Forms.Label();
             this.nudCantidad = new System.Windows.Forms.NumericUpDown();
             this.gbxDatosCliente = new System.Windows.Forms.GroupBox();
+            this.cmbAlias = new System.Windows.Forms.ComboBox();
+            this.cmbApMaterno = new System.Windows.Forms.ComboBox();
+            this.cmbApPaterno = new System.Windows.Forms.ComboBox();
+            this.cmbNombre = new System.Windows.Forms.ComboBox();
             this.nudPuntosAcumulados = new System.Windows.Forms.NumericUpDown();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.cmbNombre = new System.Windows.Forms.ComboBox();
-            this.cmbApPaterno = new System.Windows.Forms.ComboBox();
-            this.cmbApMaterno = new System.Windows.Forms.ComboBox();
-            this.cmbAlias = new System.Windows.Forms.ComboBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -522,8 +522,7 @@ namespace GUI
             // 
             // btnActualizarVenta
             // 
-            this.btnActualizarVenta.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnActualizarVenta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnActualizarVenta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnActualizarVenta.FlatAppearance.BorderSize = 0;
             this.btnActualizarVenta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SlateBlue;
@@ -539,8 +538,7 @@ namespace GUI
             // 
             // btnEliminarVenta
             // 
-            this.btnEliminarVenta.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEliminarVenta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEliminarVenta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnEliminarVenta.FlatAppearance.BorderSize = 0;
             this.btnEliminarVenta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
@@ -830,6 +828,38 @@ namespace GUI
             this.gbxDatosCliente.TabStop = false;
             this.gbxDatosCliente.Text = "Datos Del Cliente";
             // 
+            // cmbAlias
+            // 
+            this.cmbAlias.FormattingEnabled = true;
+            this.cmbAlias.Location = new System.Drawing.Point(260, 49);
+            this.cmbAlias.Name = "cmbAlias";
+            this.cmbAlias.Size = new System.Drawing.Size(66, 21);
+            this.cmbAlias.TabIndex = 47;
+            // 
+            // cmbApMaterno
+            // 
+            this.cmbApMaterno.FormattingEnabled = true;
+            this.cmbApMaterno.Location = new System.Drawing.Point(103, 49);
+            this.cmbApMaterno.Name = "cmbApMaterno";
+            this.cmbApMaterno.Size = new System.Drawing.Size(92, 21);
+            this.cmbApMaterno.TabIndex = 46;
+            // 
+            // cmbApPaterno
+            // 
+            this.cmbApPaterno.FormattingEnabled = true;
+            this.cmbApPaterno.Location = new System.Drawing.Point(234, 19);
+            this.cmbApPaterno.Name = "cmbApPaterno";
+            this.cmbApPaterno.Size = new System.Drawing.Size(92, 21);
+            this.cmbApPaterno.TabIndex = 45;
+            // 
+            // cmbNombre
+            // 
+            this.cmbNombre.FormattingEnabled = true;
+            this.cmbNombre.Location = new System.Drawing.Point(56, 22);
+            this.cmbNombre.Name = "cmbNombre";
+            this.cmbNombre.Size = new System.Drawing.Size(67, 21);
+            this.cmbNombre.TabIndex = 44;
+            // 
             // nudPuntosAcumulados
             // 
             this.nudPuntosAcumulados.Enabled = false;
@@ -887,38 +917,6 @@ namespace GUI
             this.label10.Size = new System.Drawing.Size(89, 13);
             this.label10.TabIndex = 43;
             this.label10.Text = "Apellido Materno:";
-            // 
-            // cmbNombre
-            // 
-            this.cmbNombre.FormattingEnabled = true;
-            this.cmbNombre.Location = new System.Drawing.Point(56, 22);
-            this.cmbNombre.Name = "cmbNombre";
-            this.cmbNombre.Size = new System.Drawing.Size(67, 21);
-            this.cmbNombre.TabIndex = 44;
-            // 
-            // cmbApPaterno
-            // 
-            this.cmbApPaterno.FormattingEnabled = true;
-            this.cmbApPaterno.Location = new System.Drawing.Point(234, 19);
-            this.cmbApPaterno.Name = "cmbApPaterno";
-            this.cmbApPaterno.Size = new System.Drawing.Size(92, 21);
-            this.cmbApPaterno.TabIndex = 45;
-            // 
-            // cmbApMaterno
-            // 
-            this.cmbApMaterno.FormattingEnabled = true;
-            this.cmbApMaterno.Location = new System.Drawing.Point(103, 49);
-            this.cmbApMaterno.Name = "cmbApMaterno";
-            this.cmbApMaterno.Size = new System.Drawing.Size(92, 21);
-            this.cmbApMaterno.TabIndex = 46;
-            // 
-            // cmbAlias
-            // 
-            this.cmbAlias.FormattingEnabled = true;
-            this.cmbAlias.Location = new System.Drawing.Point(260, 49);
-            this.cmbAlias.Name = "cmbAlias";
-            this.cmbAlias.Size = new System.Drawing.Size(66, 21);
-            this.cmbAlias.TabIndex = 47;
             // 
             // errorProvider1
             // 

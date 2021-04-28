@@ -46,8 +46,12 @@ namespace GUI
             this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.gbxDatosCliente = new System.Windows.Forms.GroupBox();
+            this.cmbTelefono = new System.Windows.Forms.ComboBox();
+            this.cmbNombre = new System.Windows.Forms.ComboBox();
             this.btnCancelarProveedor = new System.Windows.Forms.Button();
             this.btnListoProveedor = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtDescripcionProveedor = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.nudLoteDeProducto = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
@@ -89,10 +93,6 @@ namespace GUI
             this.ReqPatente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txtDescripcionProveedor = new System.Windows.Forms.TextBox();
-            this.cmbNombre = new System.Windows.Forms.ComboBox();
-            this.cmbTelefono = new System.Windows.Forms.ComboBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.nudSubtotal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudIva)).BeginInit();
@@ -263,6 +263,22 @@ namespace GUI
             this.gbxDatosCliente.TabStop = false;
             this.gbxDatosCliente.Text = "Datos Del Proveedor";
             // 
+            // cmbTelefono
+            // 
+            this.cmbTelefono.FormattingEnabled = true;
+            this.cmbTelefono.Location = new System.Drawing.Point(94, 45);
+            this.cmbTelefono.Name = "cmbTelefono";
+            this.cmbTelefono.Size = new System.Drawing.Size(248, 21);
+            this.cmbTelefono.TabIndex = 47;
+            // 
+            // cmbNombre
+            // 
+            this.cmbNombre.FormattingEnabled = true;
+            this.cmbNombre.Location = new System.Drawing.Point(94, 13);
+            this.cmbNombre.Name = "cmbNombre";
+            this.cmbNombre.Size = new System.Drawing.Size(248, 21);
+            this.cmbNombre.TabIndex = 46;
+            // 
             // btnCancelarProveedor
             // 
             this.btnCancelarProveedor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -298,6 +314,24 @@ namespace GUI
             this.btnListoProveedor.Text = "LISTO";
             this.btnListoProveedor.UseVisualStyleBackColor = false;
             this.btnListoProveedor.Click += new System.EventHandler(this.btnListoProveedor_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label10.Location = new System.Drawing.Point(22, 75);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(66, 13);
+            this.label10.TabIndex = 43;
+            this.label10.Text = "Descripción:";
+            // 
+            // txtDescripcionProveedor
+            // 
+            this.txtDescripcionProveedor.Location = new System.Drawing.Point(94, 72);
+            this.txtDescripcionProveedor.Multiline = true;
+            this.txtDescripcionProveedor.Name = "txtDescripcionProveedor";
+            this.txtDescripcionProveedor.Size = new System.Drawing.Size(248, 54);
+            this.txtDescripcionProveedor.TabIndex = 42;
             // 
             // groupBox1
             // 
@@ -636,8 +670,7 @@ namespace GUI
             // 
             // btnActualizarCompra
             // 
-            this.btnActualizarCompra.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnActualizarCompra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnActualizarCompra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnActualizarCompra.FlatAppearance.BorderSize = 0;
             this.btnActualizarCompra.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SlateBlue;
@@ -653,8 +686,7 @@ namespace GUI
             // 
             // btnEliminarCompra
             // 
-            this.btnEliminarCompra.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEliminarCompra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEliminarCompra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnEliminarCompra.FlatAppearance.BorderSize = 0;
             this.btnEliminarCompra.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
@@ -783,40 +815,6 @@ namespace GUI
             this.groupBox2.TabIndex = 48;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "DATOS DE COMPRA";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label10.Location = new System.Drawing.Point(22, 75);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(66, 13);
-            this.label10.TabIndex = 43;
-            this.label10.Text = "Descripción:";
-            // 
-            // txtDescripcionProveedor
-            // 
-            this.txtDescripcionProveedor.Location = new System.Drawing.Point(94, 72);
-            this.txtDescripcionProveedor.Multiline = true;
-            this.txtDescripcionProveedor.Name = "txtDescripcionProveedor";
-            this.txtDescripcionProveedor.Size = new System.Drawing.Size(248, 54);
-            this.txtDescripcionProveedor.TabIndex = 42;
-            // 
-            // cmbNombre
-            // 
-            this.cmbNombre.FormattingEnabled = true;
-            this.cmbNombre.Location = new System.Drawing.Point(94, 13);
-            this.cmbNombre.Name = "cmbNombre";
-            this.cmbNombre.Size = new System.Drawing.Size(248, 21);
-            this.cmbNombre.TabIndex = 46;
-            // 
-            // cmbTelefono
-            // 
-            this.cmbTelefono.FormattingEnabled = true;
-            this.cmbTelefono.Location = new System.Drawing.Point(94, 45);
-            this.cmbTelefono.Name = "cmbTelefono";
-            this.cmbTelefono.Size = new System.Drawing.Size(248, 21);
-            this.cmbTelefono.TabIndex = 47;
             // 
             // errorProvider1
             // 
