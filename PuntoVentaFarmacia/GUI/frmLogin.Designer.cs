@@ -81,6 +81,7 @@ namespace GUI
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.dgvValidacionUsuario = new System.Windows.Forms.DataGridView();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxlogo)).BeginInit();
             this.BarraSuperior.SuspendLayout();
@@ -102,11 +103,13 @@ namespace GUI
             ((System.ComponentModel.ISupportInitialize)(this.btnOcultarC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMostarC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvValidacionUsuario)).BeginInit();
             this.SuspendLayout();
             // 
             // panelLogo
             // 
             this.panelLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(40)))));
+            this.panelLogo.Controls.Add(this.dgvValidacionUsuario);
             this.panelLogo.Controls.Add(this.pbxlogo);
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
@@ -738,6 +741,14 @@ namespace GUI
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // dgvValidacionUsuario
+            // 
+            this.dgvValidacionUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvValidacionUsuario.Location = new System.Drawing.Point(72, 244);
+            this.dgvValidacionUsuario.Name = "dgvValidacionUsuario";
+            this.dgvValidacionUsuario.Size = new System.Drawing.Size(149, 67);
+            this.dgvValidacionUsuario.TabIndex = 1;
+            // 
             // frmLog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -776,6 +787,7 @@ namespace GUI
             ((System.ComponentModel.ISupportInitialize)(this.btnOcultarC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMostarC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvValidacionUsuario)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -832,6 +844,7 @@ namespace GUI
         private System.Windows.Forms.Label label1;
         private Metroit.Windows.Forms.MetDateTimePicker dtpFechaNac;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.DataGridView dgvValidacionUsuario;
     }
 }
 

@@ -1,0 +1,6 @@
+C:\Users\GeRaLsS4\source\repos\PuntoVentaFarmacia\DAL\bin\Debug\DAL.dll
+C:\Users\GeRaLsS4\source\repos\PuntoVentaFarmacia\DAL\bin\Debug\DAL.pdb
+C:\Users\GeRaLsS4\source\repos\PuntoVentaFarmacia\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+C:\Users\GeRaLsS4\source\repos\PuntoVentaFarmacia\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\GeRaLsS4\source\repos\PuntoVentaFarmacia\DAL\obj\Debug\DAL.dll
+C:\Users\GeRaLsS4\source\repos\PuntoVentaFarmacia\DAL\obj\Debug\DAL.pdb

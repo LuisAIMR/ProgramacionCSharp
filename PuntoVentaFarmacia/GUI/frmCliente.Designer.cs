@@ -36,7 +36,7 @@ namespace GUI
             this.txtApPaterno = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtApMaterno = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpFechaNac = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtTelefono = new System.Windows.Forms.TextBox();
@@ -67,14 +67,14 @@ namespace GUI
             this.label10 = new System.Windows.Forms.Label();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnBuscarCliente = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvBusquedaClientes = new System.Windows.Forms.DataGridView();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.gbxDatosPersonales.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBusquedaClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -129,13 +129,13 @@ namespace GUI
             this.txtApMaterno.Size = new System.Drawing.Size(100, 20);
             this.txtApMaterno.TabIndex = 3;
             // 
-            // dateTimePicker1
+            // dtpFechaNac
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(138, 149);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(100, 20);
-            this.dateTimePicker1.TabIndex = 4;
+            this.dtpFechaNac.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaNac.Location = new System.Drawing.Point(138, 149);
+            this.dtpFechaNac.Name = "dtpFechaNac";
+            this.dtpFechaNac.Size = new System.Drawing.Size(100, 20);
+            this.dtpFechaNac.TabIndex = 4;
             // 
             // label9
             // 
@@ -242,7 +242,7 @@ namespace GUI
             this.gbxDatosPersonales.Controls.Add(this.label2);
             this.gbxDatosPersonales.Controls.Add(this.txtTelefono);
             this.gbxDatosPersonales.Controls.Add(this.txtApMaterno);
-            this.gbxDatosPersonales.Controls.Add(this.dateTimePicker1);
+            this.gbxDatosPersonales.Controls.Add(this.dtpFechaNac);
             this.gbxDatosPersonales.Controls.Add(this.label3);
             this.gbxDatosPersonales.Controls.Add(this.label9);
             this.gbxDatosPersonales.ForeColor = System.Drawing.SystemColors.ButtonFace;
@@ -332,7 +332,7 @@ namespace GUI
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.btnActualizar);
             this.groupBox1.Controls.Add(this.btnBuscarCliente);
-            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Controls.Add(this.dgvBusquedaClientes);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.groupBox1.Location = new System.Drawing.Point(295, 54);
             this.groupBox1.Name = "groupBox1";
@@ -478,16 +478,16 @@ namespace GUI
             this.btnBuscarCliente.UseVisualStyleBackColor = false;
             this.btnBuscarCliente.Click += new System.EventHandler(this.btnBuscarCliente_Click);
             // 
-            // dataGridView1
+            // dgvBusquedaClientes
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvBusquedaClientes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(16, 161);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(731, 295);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvBusquedaClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBusquedaClientes.Location = new System.Drawing.Point(16, 161);
+            this.dgvBusquedaClientes.Name = "dgvBusquedaClientes";
+            this.dgvBusquedaClientes.Size = new System.Drawing.Size(731, 295);
+            this.dgvBusquedaClientes.TabIndex = 0;
             // 
             // errorProvider1
             // 
@@ -515,7 +515,7 @@ namespace GUI
             this.groupBox1.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBusquedaClientes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
@@ -528,7 +528,7 @@ namespace GUI
         private System.Windows.Forms.TextBox txtApPaterno;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtApMaterno;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpFechaNac;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtTelefono;
@@ -543,7 +543,7 @@ namespace GUI
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnAgregarCliente;
         private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvBusquedaClientes;
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Button btnBuscarCliente;
         private System.Windows.Forms.TextBox txtCurp;

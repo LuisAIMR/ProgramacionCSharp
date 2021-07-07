@@ -41,12 +41,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="D_Conexion.cs" />
+    <Compile Include="Modelos\D_Baja.cs" />
+    <Compile Include="Modelos\D_Cliente.cs" />
+    <Compile Include="Modelos\D_Compra.cs" />
+    <Compile Include="Modelos\D_DetalleCP.cs" />
+    <Compile Include="Modelos\D_DetallePT.cs" />
+    <Compile Include="Modelos\D_DetalleVD.cs" />
+    <Compile Include="Modelos\D_DetalleVP.cs" />
+    <Compile Include="Modelos\D_Devolucion.cs" />
+    <Compile Include="Modelos\D_Empleado.cs" />
+    <Compile Include="Modelos\D_Especial.cs" />
+    <Compile Include="Modelos\D_ExtraV.cs" />
+    <Compile Include="Modelos\D_Persona.cs" />
+    <Compile Include="Modelos\D_Producto.cs" />
+    <Compile Include="Modelos\D_Proveedor.cs" />
+    <Compile Include="Modelos\D_Puesto.cs" />
+    <Compile Include="Modelos\D_Tipo.cs" />
+    <Compile Include="Modelos\D_Turno.cs" />
+    <Compile Include="Modelos\D_Usuario.cs" />
+    <Compile Include="Modelos\D_Venta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="CRUD\" />
-    <Folder Include="Modelos\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

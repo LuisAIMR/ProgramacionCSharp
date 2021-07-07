@@ -130,8 +130,12 @@ namespace GUI
             txtBusNombreUsuario.Text = "";
             txtBusCurp.Text = "";
         }
+
         #endregion
 
-       
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -1,0 +1,9 @@
+C:\Users\GeRaLsS4\source\repos\PuntoVentaFarmacia\Business\bin\Debug\Business.dll
+C:\Users\GeRaLsS4\source\repos\PuntoVentaFarmacia\Business\bin\Debug\Business.pdb
+C:\Users\GeRaLsS4\source\repos\PuntoVentaFarmacia\Business\bin\Debug\DAL.dll
+C:\Users\GeRaLsS4\source\repos\PuntoVentaFarmacia\Business\bin\Debug\DAL.pdb
+C:\Users\GeRaLsS4\source\repos\PuntoVentaFarmacia\Business\obj\Debug\Business.csprojAssemblyReference.cache
+C:\Users\GeRaLsS4\source\repos\PuntoVentaFarmacia\Business\obj\Debug\Business.csproj.CoreCompileInputs.cache
+C:\Users\GeRaLsS4\source\repos\PuntoVentaFarmacia\Business\obj\Debug\Business.csproj.CopyComplete
+C:\Users\GeRaLsS4\source\repos\PuntoVentaFarmacia\Business\obj\Debug\Business.dll
+C:\Users\GeRaLsS4\source\repos\PuntoVentaFarmacia\Business\obj\Debug\Business.pdb

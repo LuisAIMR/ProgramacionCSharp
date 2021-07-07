@@ -46,7 +46,13 @@ namespace GUI
             this.btnDevoluciones = new FontAwesome.Sharp.IconButton();
             this.btnHorarios = new FontAwesome.Sharp.IconButton();
             this.pnlSubmenuReportes = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.btnReporteClientes = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.btnReporteEmpleados = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnReporteProductos = new System.Windows.Forms.Button();
             this.btnReporteCompras = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
             this.btnReporteVentas = new System.Windows.Forms.Button();
@@ -213,7 +219,7 @@ namespace GUI
             // pnlSeleccionador
             // 
             this.pnlSeleccionador.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(40)))));
-            this.pnlSeleccionador.Location = new System.Drawing.Point(208, 469);
+            this.pnlSeleccionador.Location = new System.Drawing.Point(208, 473);
             this.pnlSeleccionador.Name = "pnlSeleccionador";
             this.pnlSeleccionador.Size = new System.Drawing.Size(12, 33);
             this.pnlSeleccionador.TabIndex = 33;
@@ -233,7 +239,7 @@ namespace GUI
             this.btnBajas.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnBajas.IconSize = 36;
             this.btnBajas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBajas.Location = new System.Drawing.Point(0, 469);
+            this.btnBajas.Location = new System.Drawing.Point(0, 572);
             this.btnBajas.Name = "btnBajas";
             this.btnBajas.Size = new System.Drawing.Size(220, 33);
             this.btnBajas.TabIndex = 37;
@@ -255,7 +261,7 @@ namespace GUI
             this.btnProveedores.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnProveedores.IconSize = 36;
             this.btnProveedores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProveedores.Location = new System.Drawing.Point(0, 436);
+            this.btnProveedores.Location = new System.Drawing.Point(0, 539);
             this.btnProveedores.Name = "btnProveedores";
             this.btnProveedores.Size = new System.Drawing.Size(220, 33);
             this.btnProveedores.TabIndex = 36;
@@ -277,7 +283,7 @@ namespace GUI
             this.btnDevoluciones.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDevoluciones.IconSize = 36;
             this.btnDevoluciones.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDevoluciones.Location = new System.Drawing.Point(0, 403);
+            this.btnDevoluciones.Location = new System.Drawing.Point(0, 506);
             this.btnDevoluciones.Name = "btnDevoluciones";
             this.btnDevoluciones.Size = new System.Drawing.Size(220, 33);
             this.btnDevoluciones.TabIndex = 35;
@@ -299,7 +305,7 @@ namespace GUI
             this.btnHorarios.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnHorarios.IconSize = 36;
             this.btnHorarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHorarios.Location = new System.Drawing.Point(0, 370);
+            this.btnHorarios.Location = new System.Drawing.Point(0, 473);
             this.btnHorarios.Name = "btnHorarios";
             this.btnHorarios.Size = new System.Drawing.Size(220, 33);
             this.btnHorarios.TabIndex = 34;
@@ -309,7 +315,13 @@ namespace GUI
             // 
             // pnlSubmenuReportes
             // 
+            this.pnlSubmenuReportes.Controls.Add(this.panel4);
+            this.pnlSubmenuReportes.Controls.Add(this.btnReporteClientes);
+            this.pnlSubmenuReportes.Controls.Add(this.panel3);
+            this.pnlSubmenuReportes.Controls.Add(this.btnReporteEmpleados);
+            this.pnlSubmenuReportes.Controls.Add(this.panel2);
             this.pnlSubmenuReportes.Controls.Add(this.panel1);
+            this.pnlSubmenuReportes.Controls.Add(this.btnReporteProductos);
             this.pnlSubmenuReportes.Controls.Add(this.btnReporteCompras);
             this.pnlSubmenuReportes.Controls.Add(this.panel8);
             this.pnlSubmenuReportes.Controls.Add(this.btnReporteVentas);
@@ -317,17 +329,92 @@ namespace GUI
             this.pnlSubmenuReportes.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlSubmenuReportes.Location = new System.Drawing.Point(0, 298);
             this.pnlSubmenuReportes.Name = "pnlSubmenuReportes";
-            this.pnlSubmenuReportes.Size = new System.Drawing.Size(220, 72);
+            this.pnlSubmenuReportes.Size = new System.Drawing.Size(220, 175);
             this.pnlSubmenuReportes.TabIndex = 28;
             this.pnlSubmenuReportes.Visible = false;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.SlateBlue;
+            this.panel4.Location = new System.Drawing.Point(16, 139);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(10, 28);
+            this.panel4.TabIndex = 22;
+            // 
+            // btnReporteClientes
+            // 
+            this.btnReporteClientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.btnReporteClientes.FlatAppearance.BorderSize = 0;
+            this.btnReporteClientes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SlateBlue;
+            this.btnReporteClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReporteClientes.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReporteClientes.ForeColor = System.Drawing.Color.White;
+            this.btnReporteClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReporteClientes.Location = new System.Drawing.Point(26, 139);
+            this.btnReporteClientes.Name = "btnReporteClientes";
+            this.btnReporteClientes.Size = new System.Drawing.Size(191, 28);
+            this.btnReporteClientes.TabIndex = 23;
+            this.btnReporteClientes.Text = "Reporte de Clientes";
+            this.btnReporteClientes.UseVisualStyleBackColor = false;
+            this.btnReporteClientes.Click += new System.EventHandler(this.btnReporteClientes_Click);
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.SlateBlue;
+            this.panel3.Location = new System.Drawing.Point(16, 105);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(10, 28);
+            this.panel3.TabIndex = 20;
+            // 
+            // btnReporteEmpleados
+            // 
+            this.btnReporteEmpleados.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.btnReporteEmpleados.FlatAppearance.BorderSize = 0;
+            this.btnReporteEmpleados.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SlateBlue;
+            this.btnReporteEmpleados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReporteEmpleados.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReporteEmpleados.ForeColor = System.Drawing.Color.White;
+            this.btnReporteEmpleados.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReporteEmpleados.Location = new System.Drawing.Point(26, 105);
+            this.btnReporteEmpleados.Name = "btnReporteEmpleados";
+            this.btnReporteEmpleados.Size = new System.Drawing.Size(191, 28);
+            this.btnReporteEmpleados.TabIndex = 21;
+            this.btnReporteEmpleados.Text = "Reporte de Empleados";
+            this.btnReporteEmpleados.UseVisualStyleBackColor = false;
+            this.btnReporteEmpleados.Click += new System.EventHandler(this.btnReporteEmpleados_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.SlateBlue;
+            this.panel2.Location = new System.Drawing.Point(16, 71);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(10, 28);
+            this.panel2.TabIndex = 18;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.SlateBlue;
-            this.panel1.Location = new System.Drawing.Point(42, 36);
+            this.panel1.Location = new System.Drawing.Point(16, 37);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(10, 28);
             this.panel1.TabIndex = 16;
+            // 
+            // btnReporteProductos
+            // 
+            this.btnReporteProductos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.btnReporteProductos.FlatAppearance.BorderSize = 0;
+            this.btnReporteProductos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SlateBlue;
+            this.btnReporteProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReporteProductos.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReporteProductos.ForeColor = System.Drawing.Color.White;
+            this.btnReporteProductos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReporteProductos.Location = new System.Drawing.Point(23, 71);
+            this.btnReporteProductos.Name = "btnReporteProductos";
+            this.btnReporteProductos.Size = new System.Drawing.Size(197, 28);
+            this.btnReporteProductos.TabIndex = 19;
+            this.btnReporteProductos.Text = "Reporte de Proveedores";
+            this.btnReporteProductos.UseVisualStyleBackColor = false;
+            this.btnReporteProductos.Click += new System.EventHandler(this.btnReporteProductos_Click);
             // 
             // btnReporteCompras
             // 
@@ -338,17 +425,18 @@ namespace GUI
             this.btnReporteCompras.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReporteCompras.ForeColor = System.Drawing.Color.White;
             this.btnReporteCompras.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReporteCompras.Location = new System.Drawing.Point(52, 37);
+            this.btnReporteCompras.Location = new System.Drawing.Point(26, 37);
             this.btnReporteCompras.Name = "btnReporteCompras";
-            this.btnReporteCompras.Size = new System.Drawing.Size(171, 28);
+            this.btnReporteCompras.Size = new System.Drawing.Size(197, 28);
             this.btnReporteCompras.TabIndex = 17;
             this.btnReporteCompras.Text = "Reporte de Compras";
             this.btnReporteCompras.UseVisualStyleBackColor = false;
+            this.btnReporteCompras.Click += new System.EventHandler(this.btnReporteCompras_Click);
             // 
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.SlateBlue;
-            this.panel8.Location = new System.Drawing.Point(42, 3);
+            this.panel8.Location = new System.Drawing.Point(16, 3);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(10, 28);
             this.panel8.TabIndex = 15;
@@ -362,12 +450,13 @@ namespace GUI
             this.btnReporteVentas.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReporteVentas.ForeColor = System.Drawing.Color.White;
             this.btnReporteVentas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReporteVentas.Location = new System.Drawing.Point(49, 2);
+            this.btnReporteVentas.Location = new System.Drawing.Point(26, 3);
             this.btnReporteVentas.Name = "btnReporteVentas";
-            this.btnReporteVentas.Size = new System.Drawing.Size(171, 28);
+            this.btnReporteVentas.Size = new System.Drawing.Size(194, 28);
             this.btnReporteVentas.TabIndex = 16;
             this.btnReporteVentas.Text = "Reporte de Ventas";
             this.btnReporteVentas.UseVisualStyleBackColor = false;
+            this.btnReporteVentas.Click += new System.EventHandler(this.btnReporteVentas_Click);
             // 
             // btnReporte
             // 
@@ -592,6 +681,7 @@ namespace GUI
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmPantallaPrincipal";
             this.Text = "Punto de Venta Farmacia ";
+            this.Load += new System.EventHandler(this.frmPantallaPrincipal_Load);
             this.barraTitulo.ResumeLayout(false);
             this.barraTitulo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnLogo)).EndInit();
@@ -642,5 +732,11 @@ namespace GUI
         private System.Windows.Forms.Button btnReporteCompras;
         private FontAwesome.Sharp.IconButton btnBajas;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Button btnReporteClientes;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button btnReporteEmpleados;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btnReporteProductos;
     }
 }

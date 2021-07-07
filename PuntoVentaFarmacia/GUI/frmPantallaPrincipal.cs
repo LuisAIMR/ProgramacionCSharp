@@ -10,16 +10,33 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using FontAwesome.Sharp;
 using MaterialSkin;
+using System.Data.SqlClient;
+using DAL;
+using Business;
 
 namespace GUI
 {
     public partial class frmPantallaPrincipal : Form
     {
+        private B_OperacionesEmpleados BEmpleado = new B_OperacionesEmpleados();
+        public string usuarioLogeado="",contrasenaLogeada="";
         public frmPantallaPrincipal()
         {
             InitializeComponent();
             abrirForm<frmBienvenida>();
             mostrarMensajes();
+            //cargarDatosEmpleado();
+        }
+        private void frmPantallaPrincipal_Load(object sender, EventArgs e)
+        {
+            //Conexion conexionDB = new Conexion();
+            //conexionDB.abrir();
+            //string cadena = "";
+            //SqlCommand comando = new SqlCommand(cadena,conexionDB.conectarbd);
+            //SqlDataAdapter adapdator = new SqlDataAdapter(comando);
+            //DataTable empleadoTablaPantalla = new DataTable();
+            //adapdator.Fill(empleadoTablaPantalla);
+            
         }
         #region usos libreria System.Runtime.InteropServices;
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -310,7 +327,30 @@ namespace GUI
             SeguirBoton((FontAwesome.Sharp.IconButton)sender);
             seleccionarBoton((FontAwesome.Sharp.IconButton)sender);
         }
+        private void btnReporteVentas_Click(object sender, EventArgs e)
+        {
+            abrirForm<frmReportesVentas>();
+        }
 
+        private void btnReporteCompras_Click(object sender, EventArgs e)
+        {
+            abrirForm<frmReportesCompras>();
+        }
+
+        private void btnReporteProductos_Click(object sender, EventArgs e)
+        {
+            abrirForm<frmReportesProveedores>();
+        }
+
+        private void btnReporteEmpleados_Click(object sender, EventArgs e)
+        {
+            abrirForm<frmReportesEmpleados>();
+        }
+
+        private void btnReporteClientes_Click(object sender, EventArgs e)
+        {
+            abrirForm<frmReportesClientes>();
+        }
         #endregion
 
         #region Eventos key press
@@ -471,6 +511,13 @@ namespace GUI
         private void btnVentas_KeyUp(object sender, KeyEventArgs e)
         {
             
+        }
+
+        public void cargarDatosEmpleado()
+        {
+            var lista = BEmpleado.MostrarDatosEmpleado(usuarioLogeado,contrasenaLogeada);
+            lblPuesto.Text = lista.Rows[0].ToString();
+            lblNombre.Text= lista.Rows[2].ToString();
         }
     }
 }

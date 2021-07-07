@@ -9,13 +9,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
+using Business;
 
 
 namespace GUI
 {
     public partial class frmLog : Form
     {
-        public string usuario = "";
+        public string usuario = "", contra = "";
+        private B_OperacionesEmpleados BEmpleado = new B_OperacionesEmpleados();
         public frmLog()
         {
             InitializeComponent();
@@ -59,12 +61,16 @@ namespace GUI
         #region controles de acceso y registro de usuario
         private void btnAcceder_Click(object sender, EventArgs e)
         {
-            if (txtUsuario.Text == "ADMIN")
+            ValidarLogeo();
+             
+            if (txtUsuario.Text == usuario)
             {
-                if (txtContrasena.Text == "ElAdmin")
+                if (txtContrasena.Text == contra)
                 {
                     this.Hide();
                     frmPantallaPrincipal bienvenida = new frmPantallaPrincipal();
+                    bienvenida.usuarioLogeado = txtUsuario.Text;
+                    bienvenida.contrasenaLogeada = txtContrasena.Text;
                     bienvenida.Show();
                     pbxContra.IconColor = Color.Green;
                 }
@@ -81,6 +87,7 @@ namespace GUI
                 MessageBox.Show("Usuario no valido", "LOGIN", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 pbxUser.IconColor = Color.Red;
             }
+            regresarUser();
         }
         private void txtContrasena_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -241,6 +248,7 @@ namespace GUI
         //Mostrar contraseña o ocultarla       
         private void btnMostarC_Click(object sender, EventArgs e)
         {
+           
             txtContrasena.ForeColor = Color.White;
             txtContrasena.UseSystemPasswordChar = false;
             btnMostarC.Visible = false;
@@ -527,8 +535,29 @@ namespace GUI
             }
         }
 
+        private bool ValidarLogeo()
+        {
+            bool estado;
+            var lista = BEmpleado.validarUsuario(txtUsuario.Text, txtContrasena.Text);
+            if(lista != null)
+            {
+                usuario = lista.Rows[0].ToString();
+                contra = lista.Rows[1].ToString();
+                estado = true;
+            }
+            else
+            {
+                estado = false;
+            }
+            return estado;
+            
 
-
+        }
+        private void regresarUser()
+        {
+            usuario = "";
+            contra = "";
+        }
 
 
         #endregion

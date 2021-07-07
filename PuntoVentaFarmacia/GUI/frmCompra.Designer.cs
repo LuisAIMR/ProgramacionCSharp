@@ -79,7 +79,7 @@ namespace GUI
             this.dtpFechaInicial = new System.Windows.Forms.DateTimePicker();
             this.btnActualizarCompra = new System.Windows.Forms.Button();
             this.btnEliminarCompra = new System.Windows.Forms.Button();
-            this.btnBuscarProducto = new System.Windows.Forms.Button();
+            this.btnBuscarCompra = new System.Windows.Forms.Button();
             this.dgvResBusquedaCompra = new System.Windows.Forms.DataGridView();
             this.Lote = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -538,7 +538,7 @@ namespace GUI
             this.gbxBusqueda.Controls.Add(this.gbxFiltro);
             this.gbxBusqueda.Controls.Add(this.btnActualizarCompra);
             this.gbxBusqueda.Controls.Add(this.btnEliminarCompra);
-            this.gbxBusqueda.Controls.Add(this.btnBuscarProducto);
+            this.gbxBusqueda.Controls.Add(this.btnBuscarCompra);
             this.gbxBusqueda.Controls.Add(this.dgvResBusquedaCompra);
             this.gbxBusqueda.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.gbxBusqueda.Location = new System.Drawing.Point(404, 45);
@@ -700,21 +700,21 @@ namespace GUI
             this.btnEliminarCompra.Text = "ELIMINAR COMPRA";
             this.btnEliminarCompra.UseVisualStyleBackColor = false;
             // 
-            // btnBuscarProducto
+            // btnBuscarCompra
             // 
-            this.btnBuscarProducto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnBuscarProducto.FlatAppearance.BorderSize = 0;
-            this.btnBuscarProducto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SlateBlue;
-            this.btnBuscarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscarProducto.Font = new System.Drawing.Font("Malgun Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarProducto.ForeColor = System.Drawing.Color.Transparent;
-            this.btnBuscarProducto.Location = new System.Drawing.Point(14, 127);
-            this.btnBuscarProducto.Name = "btnBuscarProducto";
-            this.btnBuscarProducto.Size = new System.Drawing.Size(173, 27);
-            this.btnBuscarProducto.TabIndex = 6;
-            this.btnBuscarProducto.Text = "BUSCAR COMPRA";
-            this.btnBuscarProducto.UseVisualStyleBackColor = false;
-            this.btnBuscarProducto.Click += new System.EventHandler(this.btnBuscarProducto_Click);
+            this.btnBuscarCompra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnBuscarCompra.FlatAppearance.BorderSize = 0;
+            this.btnBuscarCompra.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SlateBlue;
+            this.btnBuscarCompra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscarCompra.Font = new System.Drawing.Font("Malgun Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscarCompra.ForeColor = System.Drawing.Color.Transparent;
+            this.btnBuscarCompra.Location = new System.Drawing.Point(14, 127);
+            this.btnBuscarCompra.Name = "btnBuscarCompra";
+            this.btnBuscarCompra.Size = new System.Drawing.Size(173, 27);
+            this.btnBuscarCompra.TabIndex = 6;
+            this.btnBuscarCompra.Text = "BUSCAR COMPRA";
+            this.btnBuscarCompra.UseVisualStyleBackColor = false;
+            this.btnBuscarCompra.Click += new System.EventHandler(this.btnBuscarProducto_Click);
             // 
             // dgvResBusquedaCompra
             // 
@@ -892,7 +892,7 @@ namespace GUI
         private System.Windows.Forms.DateTimePicker dtpFechaFinal;
         private System.Windows.Forms.DateTimePicker dtpFechaInicial;
         private System.Windows.Forms.ComboBox cmbNombreProveedor;
-        private System.Windows.Forms.Button btnBuscarProducto;
+        private System.Windows.Forms.Button btnBuscarCompra;
         private System.Windows.Forms.DataGridView dgvResBusquedaCompra;
         private System.Windows.Forms.DataGridViewTextBoxColumn Lote;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;

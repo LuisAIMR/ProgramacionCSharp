@@ -36,9 +36,14 @@
     <ApplicationIcon>senal-de-farmacia.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AxShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="CircularProgressBar, Version=2.8.0.16, Culture=neutral, PublicKeyToken=310fd07b25df79b3, processorArchitecture=MSIL">
       <HintPath>..\packages\CircularProgressBar.2.8.0.16\lib\net40\CircularProgressBar.dll</HintPath>
     </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\FontAwesome.Sharp.5.15.3\lib\net472\FontAwesome.Sharp.dll</HintPath>
     </Reference>
@@ -53,6 +58,8 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -67,6 +74,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CrystalReports\ReporteCompras.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteCompras.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="frmBaja.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +134,36 @@
     <Compile Include="frmProducto.Designer.cs">
       <DependentUpon>frmProducto.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmReportesClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportesClientes.Designer.cs">
+      <DependentUpon>frmReportesClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReportesCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportesCompras.Designer.cs">
+      <DependentUpon>frmReportesCompras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReportesEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportesEmpleados.Designer.cs">
+      <DependentUpon>frmReportesEmpleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReportesProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportesProveedores.Designer.cs">
+      <DependentUpon>frmReportesProveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReportesVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportesVentas.Designer.cs">
+      <DependentUpon>frmReportesVentas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="frmProveedor.cs">
@@ -141,6 +184,34 @@
     <Compile Include="frmVenta.Designer.cs">
       <DependentUpon>frmVenta.cs</DependentUpon>
     </Compile>
+    <Compile Include="CrystalReports\ReporteVentas.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteVentas.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReports\ReporteClientes.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteClientes.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReports\ReporteEmpleados.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteEmpleados.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReports\ReporteProveedores.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteProveedores.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <EmbeddedResource Include="CrystalReports\ReporteCompras.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReporteCompras.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmBaja.resx">
       <DependentUpon>frmBaja.cs</DependentUpon>
     </EmbeddedResource>
@@ -168,6 +239,21 @@
     <EmbeddedResource Include="frmProducto.resx">
       <DependentUpon>frmProducto.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmReportesClientes.resx">
+      <DependentUpon>frmReportesClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReportesCompras.resx">
+      <DependentUpon>frmReportesCompras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReportesEmpleados.resx">
+      <DependentUpon>frmReportesEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReportesProveedores.resx">
+      <DependentUpon>frmReportesProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReportesVentas.resx">
+      <DependentUpon>frmReportesVentas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -186,6 +272,22 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmVenta.resx">
       <DependentUpon>frmVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReports\ReporteVentas.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReporteVentas.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReports\ReporteClientes.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReporteClientes.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReports\ReporteEmpleados.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReporteEmpleados.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReports\ReporteProveedores.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReporteProveedores.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -260,6 +362,20 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="senal-de-farmacia.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Business\Business.csproj">
+      <Project>{4098feb2-3b7e-4f50-8df8-234f0be32d75}</Project>
+      <Name>Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{e2dd1ff6-af1e-4570-b031-aee07b9e140b}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

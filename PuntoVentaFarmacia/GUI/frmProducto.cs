@@ -8,17 +8,39 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using System.Data.SqlClient;
+using DAL;
+using Business;
 
 namespace GUI
 {
     public partial class frmProducto : Form
     {
+        public B_OperacionesProductos BTipo = new B_OperacionesProductos();
+        string nombreTipo;
+        int statTipo;
+
+        public B_OperacionesProductos BProducto = new B_OperacionesProductos();
+        string lote, nombreP, descripcion, fechaCad;
+        float precio;
+        int ProductoStat, idTipo, cantidadP, puntosCanejo, Puntos, reqReceta;        
         public frmProducto()
         {
             InitializeComponent();
             mostrarMensajes();
+            cargarTipos();
         }
-       
+        private void frmProducto_Load(object sender, EventArgs e)
+        {
+            //D_Conexion conexionDB = new D_Conexion();
+            //conexionDB.abrir();
+            //string cadena = "select * from Producto";
+            //SqlCommand comando = new SqlCommand(cadena, conexionDB.conectarbd);
+            //SqlDataAdapter adapdator = new SqlDataAdapter(comando);
+            //DataTable TablaProducto = new DataTable();
+            //adapdator.Fill(TablaProducto);
+            //dgvResBusquedaProd.DataSource = TablaProducto;
+        }
         public void mostrarMensajes()
         {
             this.ttpHelp.SetToolTip(this.btnAgregar, "Dar click para ingresar la información que se coloco en los controles de la sección de datos");
@@ -34,8 +56,8 @@ namespace GUI
             this.ttpHelp.SetToolTip(this.nudPuntosdeCanjeo, "Ingresa la cantidad");
             this.ttpHelp.SetToolTip(this.nudPuntosParaCanjeo, "Ingresa la cantidad");
             this.ttpHelp.SetToolTip(this.nudBusLote, "Ingresa la cantidad");
-            this.ttpHelp.SetToolTip(this.rbtnReqPantSi, "Define que el producto que se esta ingresando requiere receta para ser comprado");
-            this.ttpHelp.SetToolTip(this.rbtnReqPantNo, "Define que el producto que se esta ingresando no requiere receta para ser comprado");
+            this.ttpHelp.SetToolTip(this.rbtnEspecialSi, "Define que el producto que se esta ingresando requiere receta para ser comprado");
+            this.ttpHelp.SetToolTip(this.rbtnEspecialNo, "Define que el producto que se esta ingresando no requiere receta para ser comprado");
             this.ttpHelp.SetToolTip(this.dtpFechaCad, "Ingrese una fecha");
             this.ttpHelp.SetToolTip(this.dgvResBusquedaProd, "Muestra la información resultante de la busqueda");
 
@@ -123,6 +145,24 @@ namespace GUI
                 return;
             }
             errorProvider1.SetError(nudPuntosParaCanjeo, "");
+            if(rbtnEspecialNo.Checked == true)
+            {
+                conversionesProducto();
+                MessageBox.Show(BProducto.insertarProducto(lote, nombreP, descripcion, precio, puntosCanejo, cantidadP, Puntos, ProductoStat, idTipo));
+            }
+            else if(rbtnEspecialSi.Checked == true)
+            {
+                conversionesProducto();
+                MessageBox.Show(BProducto.insertarProductoTipo2(lote, nombreP, descripcion, precio, puntosCanejo, cantidadP, Puntos, ProductoStat, idTipo,fechaCad,reqReceta));
+            }
+            else
+            {
+
+                conversionesProducto();
+                MessageBox.Show(BProducto.insertarProducto(lote, nombreP, descripcion, precio, puntosCanejo, cantidadP, Puntos, ProductoStat, idTipo));
+
+            }
+
             gbxEspecial.Enabled = false;
             limpiarAgregado();
         }
@@ -134,6 +174,11 @@ namespace GUI
         {
             limpiarBusqueda();
         }
+
+        private void nudLote_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
         #endregion
 
         #region limpiar controles
@@ -144,8 +189,8 @@ namespace GUI
             nudLote.Value = 0;
             txtNombreProducto.Text = "";
             rtxtDescripcion.Text = "";
-            nudPrecio.Value = 0;
-            nudCantidad.Value = 0;
+            nudPrecio.Value = 1;
+            nudCantidad.Value = 1;
             nudPuntosdeCanjeo.Value=0;
             nudPuntosParaCanjeo.Value = 0;
                 
@@ -159,8 +204,55 @@ namespace GUI
         }
 
 
+
         #endregion
 
         
+        //Ejemplo de a
+        private void btnAgregarTipoProducto_Click(object sender, EventArgs e)
+        {
+            conversionesTipo();
+            MessageBox.Show(BTipo.insertarTipo(nombreTipo,statTipo));
+    
+        }
+
+
+        private void conversionesTipo()
+        {
+            nombreTipo = cmbAgregarTipo.Text.ToUpper();
+            statTipo = 1;
+        }
+        private void conversionesProducto()
+        {
+            string fmt = "00000000.##";
+            lote = nudLote.Value.ToString(fmt);                       
+            nombreP = txtNombreProducto.Text.ToUpper();
+            descripcion = rtxtDescripcion.Text.ToUpper();
+            precio =Convert.ToSingle(nudPrecio.Value);
+            puntosCanejo =Convert.ToInt32( nudPuntosParaCanjeo.Value);
+            cantidadP = Convert.ToInt32(nudCantidad.Value);
+            Puntos = Convert.ToInt32(nudPuntosdeCanjeo.Value);
+            ProductoStat = 1;        
+            idTipo = Convert.ToInt32(cmbTipoProducto.SelectedValue);
+            if(rbtnEspecialSi.Checked==true)
+            {
+                fechaCad= string.Format(dtpFechaCad.Value.ToShortDateString(), "yyyy-MM-dd");
+                if (rbtnReqPantSi.Checked==true)
+                {
+                    reqReceta = 1;
+                }
+                else
+                {
+                    reqReceta = 0;
+                }
+            }
+        }
+        public void cargarTipos()
+        {
+            var lista = BTipo.cargarTipos();
+            cmbTipoProducto.DataSource = lista;
+            cmbTipoProducto.DisplayMember = "nombreT";
+            cmbTipoProducto.ValueMember = "idTipo";
+        }
     }
 }

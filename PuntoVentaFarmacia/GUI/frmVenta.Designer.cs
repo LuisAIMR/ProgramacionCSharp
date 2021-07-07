@@ -40,7 +40,7 @@ namespace GUI
             this.gbxVentas = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.ltbTicket = new System.Windows.Forms.ListBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtBuscarProductoDeTicket = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.nudSubtotal = new System.Windows.Forms.NumericUpDown();
@@ -51,7 +51,7 @@ namespace GUI
             this.label2 = new System.Windows.Forms.Label();
             this.nudTotal = new System.Windows.Forms.NumericUpDown();
             this.btnVender = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.gbxBusqueda = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cmbNombreCliente = new System.Windows.Forms.ComboBox();
@@ -67,7 +67,7 @@ namespace GUI
             this.btnActualizarVenta = new System.Windows.Forms.Button();
             this.btnEliminarVenta = new System.Windows.Forms.Button();
             this.btnBuscarVenta = new System.Windows.Forms.Button();
-            this.dgvResBusquedaProd = new System.Windows.Forms.DataGridView();
+            this.dgvResBusquedaVenta = new System.Windows.Forms.DataGridView();
             this.Lote = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -112,7 +112,7 @@ namespace GUI
             this.gbxBusqueda.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudBusFolio)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvResBusquedaProd)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvResBusquedaVenta)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPuntosParaCanjeo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPrecio)).BeginInit();
@@ -205,7 +205,7 @@ namespace GUI
             this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBox3.Controls.Add(this.ltbTicket);
-            this.groupBox3.Controls.Add(this.textBox2);
+            this.groupBox3.Controls.Add(this.txtBuscarProductoDeTicket);
             this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.nudSubtotal);
@@ -216,7 +216,7 @@ namespace GUI
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.nudTotal);
             this.groupBox3.Controls.Add(this.btnVender);
-            this.groupBox3.Controls.Add(this.btnEliminar);
+            this.groupBox3.Controls.Add(this.btnCancelar);
             this.groupBox3.Location = new System.Drawing.Point(6, 306);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(368, 225);
@@ -233,12 +233,12 @@ namespace GUI
             this.ltbTicket.Size = new System.Drawing.Size(165, 69);
             this.ltbTicket.TabIndex = 41;
             // 
-            // textBox2
+            // txtBuscarProductoDeTicket
             // 
-            this.textBox2.Location = new System.Drawing.Point(6, 36);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(185, 20);
-            this.textBox2.TabIndex = 45;
+            this.txtBuscarProductoDeTicket.Location = new System.Drawing.Point(6, 36);
+            this.txtBuscarProductoDeTicket.Name = "txtBuscarProductoDeTicket";
+            this.txtBuscarProductoDeTicket.Size = new System.Drawing.Size(185, 20);
+            this.txtBuscarProductoDeTicket.TabIndex = 45;
             // 
             // label5
             // 
@@ -364,23 +364,23 @@ namespace GUI
             this.btnVender.UseVisualStyleBackColor = false;
             this.btnVender.Click += new System.EventHandler(this.btnVender_Click);
             // 
-            // btnEliminar
+            // btnCancelar
             // 
-            this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnEliminar.FlatAppearance.BorderSize = 0;
-            this.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar.Font = new System.Drawing.Font("Malgun Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.ForeColor = System.Drawing.Color.Transparent;
-            this.btnEliminar.Location = new System.Drawing.Point(243, 192);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(119, 27);
-            this.btnEliminar.TabIndex = 32;
-            this.btnEliminar.Text = "CANCELAR VENTA";
-            this.btnEliminar.UseVisualStyleBackColor = false;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnCancelar.FlatAppearance.BorderSize = 0;
+            this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Malgun Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.Color.Transparent;
+            this.btnCancelar.Location = new System.Drawing.Point(243, 192);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(119, 27);
+            this.btnCancelar.TabIndex = 32;
+            this.btnCancelar.Text = "CANCELAR VENTA";
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // gbxBusqueda
             // 
@@ -391,7 +391,7 @@ namespace GUI
             this.gbxBusqueda.Controls.Add(this.btnActualizarVenta);
             this.gbxBusqueda.Controls.Add(this.btnEliminarVenta);
             this.gbxBusqueda.Controls.Add(this.btnBuscarVenta);
-            this.gbxBusqueda.Controls.Add(this.dgvResBusquedaProd);
+            this.gbxBusqueda.Controls.Add(this.dgvResBusquedaVenta);
             this.gbxBusqueda.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.gbxBusqueda.Location = new System.Drawing.Point(380, 19);
             this.gbxBusqueda.Name = "gbxBusqueda";
@@ -568,13 +568,13 @@ namespace GUI
             this.btnBuscarVenta.UseVisualStyleBackColor = false;
             this.btnBuscarVenta.Click += new System.EventHandler(this.btnBuscarVenta_Click);
             // 
-            // dgvResBusquedaProd
+            // dgvResBusquedaVenta
             // 
-            this.dgvResBusquedaProd.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvResBusquedaVenta.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvResBusquedaProd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvResBusquedaProd.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvResBusquedaVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvResBusquedaVenta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Lote,
             this.Nombre,
             this.Tipo,
@@ -586,10 +586,10 @@ namespace GUI
             this.FechaCad,
             this.ReqPatente,
             this.Status});
-            this.dgvResBusquedaProd.Location = new System.Drawing.Point(6, 133);
-            this.dgvResBusquedaProd.Name = "dgvResBusquedaProd";
-            this.dgvResBusquedaProd.Size = new System.Drawing.Size(658, 331);
-            this.dgvResBusquedaProd.TabIndex = 25;
+            this.dgvResBusquedaVenta.Location = new System.Drawing.Point(6, 133);
+            this.dgvResBusquedaVenta.Name = "dgvResBusquedaVenta";
+            this.dgvResBusquedaVenta.Size = new System.Drawing.Size(658, 331);
+            this.dgvResBusquedaVenta.TabIndex = 25;
             // 
             // Lote
             // 
@@ -948,7 +948,7 @@ namespace GUI
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudBusFolio)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvResBusquedaProd)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvResBusquedaVenta)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPuntosParaCanjeo)).EndInit();
@@ -981,7 +981,7 @@ namespace GUI
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cmbNombreProducto;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnCancelarProducto;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox gbxDatosCliente;
@@ -996,13 +996,13 @@ namespace GUI
         private System.Windows.Forms.NumericUpDown nudPuntosAcumulados;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnQuitarProducto;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtBuscarProductoDeTicket;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnBuscarProductoAgregado;
         private System.Windows.Forms.GroupBox gbxBusqueda;
         private System.Windows.Forms.ComboBox cmbNombreCliente;
         private System.Windows.Forms.Button btnBuscarVenta;
-        private System.Windows.Forms.DataGridView dgvResBusquedaProd;
+        private System.Windows.Forms.DataGridView dgvResBusquedaVenta;
         private System.Windows.Forms.DataGridViewTextBoxColumn Lote;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;

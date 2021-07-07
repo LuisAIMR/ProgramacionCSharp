@@ -64,7 +64,7 @@ namespace GUI
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnBuscarEmpleado = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvBusquedaEmpleados = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtBusNombreUsuario = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -75,27 +75,29 @@ namespace GUI
             this.txtBusApellidoPerno = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.cmbPuesto = new System.Windows.Forms.ComboBox();
+            this.lblPuesto = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBusquedaEmpleados)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtConfirmarContra
             // 
-            this.txtConfirmarContra.Location = new System.Drawing.Point(155, 367);
+            this.txtConfirmarContra.Location = new System.Drawing.Point(128, 340);
             this.txtConfirmarContra.Name = "txtConfirmarContra";
-            this.txtConfirmarContra.Size = new System.Drawing.Size(100, 20);
+            this.txtConfirmarContra.Size = new System.Drawing.Size(127, 20);
             this.txtConfirmarContra.TabIndex = 46;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label7.Location = new System.Drawing.Point(1, 374);
+            this.label7.Location = new System.Drawing.Point(1, 347);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(131, 13);
             this.label7.TabIndex = 45;
@@ -105,7 +107,7 @@ namespace GUI
             // 
             this.label6.AutoSize = true;
             this.label6.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label6.Location = new System.Drawing.Point(68, 333);
+            this.label6.Location = new System.Drawing.Point(6, 311);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(64, 13);
             this.label6.TabIndex = 44;
@@ -113,16 +115,16 @@ namespace GUI
             // 
             // txtContrasenaRegistrada
             // 
-            this.txtContrasenaRegistrada.Location = new System.Drawing.Point(155, 330);
+            this.txtContrasenaRegistrada.Location = new System.Drawing.Point(76, 308);
             this.txtContrasenaRegistrada.Name = "txtContrasenaRegistrada";
-            this.txtContrasenaRegistrada.Size = new System.Drawing.Size(100, 20);
+            this.txtContrasenaRegistrada.Size = new System.Drawing.Size(179, 20);
             this.txtContrasenaRegistrada.TabIndex = 43;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label5.Location = new System.Drawing.Point(86, 259);
+            this.label5.Location = new System.Drawing.Point(4, 238);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(46, 13);
             this.label5.TabIndex = 42;
@@ -130,16 +132,16 @@ namespace GUI
             // 
             // txtUsuarioRegistrado
             // 
-            this.txtUsuarioRegistrado.Location = new System.Drawing.Point(155, 256);
+            this.txtUsuarioRegistrado.Location = new System.Drawing.Point(56, 235);
             this.txtUsuarioRegistrado.Name = "txtUsuarioRegistrado";
-            this.txtUsuarioRegistrado.Size = new System.Drawing.Size(100, 20);
+            this.txtUsuarioRegistrado.Size = new System.Drawing.Size(199, 20);
             this.txtUsuarioRegistrado.TabIndex = 41;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label4.Location = new System.Drawing.Point(80, 219);
+            this.label4.Location = new System.Drawing.Point(4, 203);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 13);
             this.label4.TabIndex = 40;
@@ -147,24 +149,24 @@ namespace GUI
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(155, 216);
+            this.txtTelefono.Location = new System.Drawing.Point(56, 200);
             this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(100, 20);
+            this.txtTelefono.Size = new System.Drawing.Size(199, 20);
             this.txtTelefono.TabIndex = 39;
             // 
             // dtpFechaNacimiento
             // 
             this.dtpFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaNacimiento.Location = new System.Drawing.Point(155, 172);
+            this.dtpFechaNacimiento.Location = new System.Drawing.Point(116, 164);
             this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
-            this.dtpFechaNacimiento.Size = new System.Drawing.Size(100, 20);
+            this.dtpFechaNacimiento.Size = new System.Drawing.Size(139, 20);
             this.dtpFechaNacimiento.TabIndex = 38;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label9.Location = new System.Drawing.Point(24, 178);
+            this.label9.Location = new System.Drawing.Point(6, 168);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(109, 13);
             this.label9.TabIndex = 37;
@@ -174,7 +176,7 @@ namespace GUI
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label3.Location = new System.Drawing.Point(45, 103);
+            this.label3.Location = new System.Drawing.Point(4, 95);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(89, 13);
             this.label3.TabIndex = 36;
@@ -182,16 +184,16 @@ namespace GUI
             // 
             // txtApMaterno
             // 
-            this.txtApMaterno.Location = new System.Drawing.Point(155, 100);
+            this.txtApMaterno.Location = new System.Drawing.Point(97, 92);
             this.txtApMaterno.Name = "txtApMaterno";
-            this.txtApMaterno.Size = new System.Drawing.Size(100, 20);
+            this.txtApMaterno.Size = new System.Drawing.Size(158, 20);
             this.txtApMaterno.TabIndex = 35;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(45, 64);
+            this.label2.Location = new System.Drawing.Point(4, 69);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(87, 13);
             this.label2.TabIndex = 34;
@@ -199,16 +201,16 @@ namespace GUI
             // 
             // txtApPaterno
             // 
-            this.txtApPaterno.Location = new System.Drawing.Point(155, 61);
+            this.txtApPaterno.Location = new System.Drawing.Point(97, 66);
             this.txtApPaterno.Name = "txtApPaterno";
-            this.txtApPaterno.Size = new System.Drawing.Size(100, 20);
+            this.txtApPaterno.Size = new System.Drawing.Size(158, 20);
             this.txtApPaterno.TabIndex = 33;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(23, 22);
+            this.label1.Location = new System.Drawing.Point(1, 37);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(113, 13);
             this.label1.TabIndex = 32;
@@ -216,9 +218,9 @@ namespace GUI
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(155, 19);
+            this.txtNombre.Location = new System.Drawing.Point(116, 34);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(100, 20);
+            this.txtNombre.Size = new System.Drawing.Size(139, 20);
             this.txtNombre.TabIndex = 31;
             // 
             // panel2
@@ -286,6 +288,8 @@ namespace GUI
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox1.Controls.Add(this.cmbPuesto);
+            this.groupBox1.Controls.Add(this.lblPuesto);
             this.groupBox1.Controls.Add(this.txtCurp);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.lblCorreo);
@@ -315,19 +319,20 @@ namespace GUI
             this.groupBox1.TabIndex = 49;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "DATOS";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // txtCurp
             // 
-            this.txtCurp.Location = new System.Drawing.Point(155, 134);
+            this.txtCurp.Location = new System.Drawing.Point(38, 129);
             this.txtCurp.Name = "txtCurp";
-            this.txtCurp.Size = new System.Drawing.Size(100, 20);
+            this.txtCurp.Size = new System.Drawing.Size(217, 20);
             this.txtCurp.TabIndex = 51;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label12.Location = new System.Drawing.Point(100, 137);
+            this.label12.Location = new System.Drawing.Point(7, 132);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(32, 13);
             this.label12.TabIndex = 52;
@@ -337,7 +342,7 @@ namespace GUI
             // 
             this.lblCorreo.AutoSize = true;
             this.lblCorreo.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblCorreo.Location = new System.Drawing.Point(86, 295);
+            this.lblCorreo.Location = new System.Drawing.Point(6, 273);
             this.lblCorreo.Name = "lblCorreo";
             this.lblCorreo.Size = new System.Drawing.Size(41, 13);
             this.lblCorreo.TabIndex = 50;
@@ -345,9 +350,9 @@ namespace GUI
             // 
             // txtCorreo
             // 
-            this.txtCorreo.Location = new System.Drawing.Point(155, 292);
+            this.txtCorreo.Location = new System.Drawing.Point(52, 270);
             this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(100, 20);
+            this.txtCorreo.Size = new System.Drawing.Size(203, 20);
             this.txtCorreo.TabIndex = 49;
             // 
             // btnCancelar
@@ -393,7 +398,7 @@ namespace GUI
             this.groupBox2.Controls.Add(this.btnEliminar);
             this.groupBox2.Controls.Add(this.btnActualizar);
             this.groupBox2.Controls.Add(this.btnBuscarEmpleado);
-            this.groupBox2.Controls.Add(this.dataGridView1);
+            this.groupBox2.Controls.Add(this.dgvBusquedaEmpleados);
             this.groupBox2.Controls.Add(this.groupBox3);
             this.groupBox2.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.groupBox2.Location = new System.Drawing.Point(307, 39);
@@ -451,16 +456,16 @@ namespace GUI
             this.btnBuscarEmpleado.UseVisualStyleBackColor = false;
             this.btnBuscarEmpleado.Click += new System.EventHandler(this.btnBuscarEmpleado_Click);
             // 
-            // dataGridView1
+            // dgvBusquedaEmpleados
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvBusquedaEmpleados.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(16, 161);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(721, 313);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvBusquedaEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBusquedaEmpleados.Location = new System.Drawing.Point(16, 161);
+            this.dgvBusquedaEmpleados.Name = "dgvBusquedaEmpleados";
+            this.dgvBusquedaEmpleados.Size = new System.Drawing.Size(721, 313);
+            this.dgvBusquedaEmpleados.TabIndex = 0;
             // 
             // groupBox3
             // 
@@ -554,6 +559,28 @@ namespace GUI
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // cmbPuesto
+            // 
+            this.cmbPuesto.FormattingEnabled = true;
+            this.cmbPuesto.Items.AddRange(new object[] {
+            "Patente",
+            "Generico",
+            "Otros"});
+            this.cmbPuesto.Location = new System.Drawing.Point(56, 385);
+            this.cmbPuesto.Name = "cmbPuesto";
+            this.cmbPuesto.Size = new System.Drawing.Size(199, 21);
+            this.cmbPuesto.TabIndex = 54;
+            // 
+            // lblPuesto
+            // 
+            this.lblPuesto.AutoSize = true;
+            this.lblPuesto.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblPuesto.Location = new System.Drawing.Point(7, 385);
+            this.lblPuesto.Name = "lblPuesto";
+            this.lblPuesto.Size = new System.Drawing.Size(43, 13);
+            this.lblPuesto.TabIndex = 53;
+            this.lblPuesto.Text = "Puesto:";
+            // 
             // frmEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -574,7 +601,7 @@ namespace GUI
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBusquedaEmpleados)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
@@ -619,7 +646,7 @@ namespace GUI
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Button btnBuscarEmpleado;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvBusquedaEmpleados;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnAgregarEmpleado;
         private System.Windows.Forms.Button btnEliminar;
@@ -629,5 +656,7 @@ namespace GUI
         private System.Windows.Forms.TextBox txtCorreo;
         private System.Windows.Forms.TextBox txtCurp;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.ComboBox cmbPuesto;
+        private System.Windows.Forms.Label lblPuesto;
     }
 }

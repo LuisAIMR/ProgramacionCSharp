@@ -64,8 +64,8 @@ namespace GUI
             this.cmbBusPuesto = new System.Windows.Forms.ComboBox();
             this.btnBuscarPuesto = new System.Windows.Forms.Button();
             this.dgvBusPuesto = new System.Windows.Forms.DataGridView();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnEliminarPuesto = new System.Windows.Forms.Button();
+            this.btnActualizarPuesto = new System.Windows.Forms.Button();
             this.btnCancelarPuesto = new System.Windows.Forms.Button();
             this.btnAgregarPuesto = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -348,8 +348,8 @@ namespace GUI
             this.groupBox4.Controls.Add(this.cmbBusPuesto);
             this.groupBox4.Controls.Add(this.btnBuscarPuesto);
             this.groupBox4.Controls.Add(this.dgvBusPuesto);
-            this.groupBox4.Controls.Add(this.button6);
-            this.groupBox4.Controls.Add(this.button5);
+            this.groupBox4.Controls.Add(this.btnEliminarPuesto);
+            this.groupBox4.Controls.Add(this.btnActualizarPuesto);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.groupBox4.Location = new System.Drawing.Point(6, 115);
@@ -436,39 +436,39 @@ namespace GUI
             this.dgvBusPuesto.Size = new System.Drawing.Size(348, 102);
             this.dgvBusPuesto.TabIndex = 58;
             // 
-            // button6
+            // btnEliminarPuesto
             // 
-            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.btnEliminarPuesto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Malgun Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.Color.Transparent;
-            this.button6.Location = new System.Drawing.Point(360, 127);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(136, 27);
-            this.button6.TabIndex = 57;
-            this.button6.Text = "ELIMINAR";
-            this.button6.UseVisualStyleBackColor = false;
+            this.btnEliminarPuesto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnEliminarPuesto.FlatAppearance.BorderSize = 0;
+            this.btnEliminarPuesto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btnEliminarPuesto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminarPuesto.Font = new System.Drawing.Font("Malgun Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarPuesto.ForeColor = System.Drawing.Color.Transparent;
+            this.btnEliminarPuesto.Location = new System.Drawing.Point(360, 127);
+            this.btnEliminarPuesto.Name = "btnEliminarPuesto";
+            this.btnEliminarPuesto.Size = new System.Drawing.Size(136, 27);
+            this.btnEliminarPuesto.TabIndex = 57;
+            this.btnEliminarPuesto.Text = "ELIMINAR";
+            this.btnEliminarPuesto.UseVisualStyleBackColor = false;
             // 
-            // button5
+            // btnActualizarPuesto
             // 
-            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.btnActualizarPuesto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SlateBlue;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Malgun Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.Transparent;
-            this.button5.Location = new System.Drawing.Point(360, 94);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(134, 27);
-            this.button5.TabIndex = 50;
-            this.button5.Text = "ACTUALIZAR";
-            this.button5.UseVisualStyleBackColor = false;
+            this.btnActualizarPuesto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnActualizarPuesto.FlatAppearance.BorderSize = 0;
+            this.btnActualizarPuesto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SlateBlue;
+            this.btnActualizarPuesto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualizarPuesto.Font = new System.Drawing.Font("Malgun Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizarPuesto.ForeColor = System.Drawing.Color.Transparent;
+            this.btnActualizarPuesto.Location = new System.Drawing.Point(360, 94);
+            this.btnActualizarPuesto.Name = "btnActualizarPuesto";
+            this.btnActualizarPuesto.Size = new System.Drawing.Size(134, 27);
+            this.btnActualizarPuesto.TabIndex = 50;
+            this.btnActualizarPuesto.Text = "ACTUALIZAR";
+            this.btnActualizarPuesto.UseVisualStyleBackColor = false;
             // 
             // btnCancelarPuesto
             // 
@@ -1185,8 +1185,8 @@ namespace GUI
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.DataGridView dgvBusPuesto;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnEliminarPuesto;
+        private System.Windows.Forms.Button btnActualizarPuesto;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox cmbBusPuesto;
         private System.Windows.Forms.Button btnBuscarPuesto;

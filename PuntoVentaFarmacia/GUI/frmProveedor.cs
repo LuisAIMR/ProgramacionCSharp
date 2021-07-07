@@ -8,22 +8,34 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using Business;
 
 namespace GUI
 {
     public partial class frmProveedor : Form
     {
+        private B_OperacionesProveedor BProveedor = new B_OperacionesProveedor();
+        string nombrePro, telefono, descripcion;
+        int stat, idProveedor;
         public frmProveedor()
         {
             InitializeComponent();
+            cargarProveedores();
+            colorDataGridview();
         }
 
         private void tmrFech_Tick(object sender, EventArgs e)
         {
             lblHora.Text = "Hora: " + DateTime.Now.ToLongTimeString();
             lblFecha.Text = "Fecha: " + DateTime.Now.ToLongDateString();
-        }
 
+               
+           
+        }
+        public void colorDataGridview()
+        {
+            dgvResBusquedaProveedor.ForeColor = Color.FromArgb(5, 15, 40);
+        }
         #region botones
 
         private void btnAgregarProveedor_Click(object sender, EventArgs e)
@@ -53,6 +65,8 @@ namespace GUI
                 return;
             }
             errorProvider1.SetError(txtDescripcion, "");
+            conversionesProvedor();
+            MessageBox.Show(BProveedor.insertarProveedor(nombrePro, telefono,descripcion,stat));
             limpiarAgregado();
         }
 
@@ -67,9 +81,55 @@ namespace GUI
         }
         #endregion region 
 
+        private void cmbBusProveedor_TextUpdate(object sender, EventArgs e)
+        {
+            if(cmbBusProveedor.Text!="")
+            {
+                nombrePro = cmbBusProveedor.Text;
+                dgvResBusquedaProveedor.DataSource = BProveedor.BuscarProveedores(nombrePro);
+            }
+            else
+            {
+                cargarProveedores();
+            }
+            
+        }
+
         private void btnBuscarProveedor_Click(object sender, EventArgs e)
         {
             cmbBusProveedor.Text = "";
+        }
+
+        private void dgvResBusquedaProveedor_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            lblIdProveedor.Text = dgvResBusquedaProveedor.CurrentRow.Cells[0].Value.ToString();
+            txtNombre.Text = dgvResBusquedaProveedor.CurrentRow.Cells[1].Value.ToString();
+            txtTelefono.Text = dgvResBusquedaProveedor.CurrentRow.Cells[2].Value.ToString();
+            txtDescripcion.Text = dgvResBusquedaProveedor.CurrentRow.Cells[3].Value.ToString();
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            conversionesProvedor();
+            MessageBox.Show(BProveedor.actualizarProveedor(nombrePro, telefono, descripcion, idProveedor));
+            cmbBusProveedor.Text = "";            
+            limpiarAgregado();
+            cargarProveedores();
+        }
+
+        private void conversionesProvedor()
+        {
+            nombrePro = txtNombre.Text.ToUpper();
+            telefono = txtTelefono.Text;
+            descripcion = txtDescripcion.Text.ToUpper();
+            stat = 1;
+            idProveedor =Convert.ToInt32(lblIdProveedor.Text);
+
+        }
+        public void cargarProveedores()
+        {
+            dgvResBusquedaProveedor.DataSource = BProveedor.MostrarProveedores();
+            dgvResBusquedaProveedor.Columns["idProveedor"].Visible = false;
         }
     }
 }
