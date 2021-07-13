@@ -8,14 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using Business;
 
 namespace GUI
 {
     public partial class frmBaja : Form
     {
+        private B_OperacionesBajas BBaja = new B_OperacionesBajas();
         public frmBaja()
         {
             InitializeComponent();
+            colorDataGridview();
+            cargarBajas();
         }
 
         private void tmrFech_Tick(object sender, EventArgs e)
@@ -117,5 +121,14 @@ namespace GUI
         }
 
         #endregion
+        public void colorDataGridview()
+        {
+            dgvResBusqBaja.ForeColor = Color.FromArgb(5, 15, 40);
+        }
+        public void cargarBajas()
+        {
+            dgvResBusqBaja.DataSource = BBaja.MostrarBajas();
+            //dgvResBusqBaja.Columns["idProveedor"].Visible = false;
+        }
     }
 }

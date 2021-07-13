@@ -8,14 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using Business;
 
 namespace GUI
 {
     public partial class frmEmpleado : Form
     {
+        private B_OperacionesEmpleados BEmpleado = new B_OperacionesEmpleados();
         public frmEmpleado()
         {
             InitializeComponent();
+            cargarEmpleados();
+            colorDataGridview();
         }
 
         private void tmrFech_Tick(object sender, EventArgs e)
@@ -136,6 +140,15 @@ namespace GUI
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+        public void cargarEmpleados()
+        {
+            dgvBusquedaEmpleados.DataSource = BEmpleado.MostrarEmpleados();
+           // dgvBusquedaEmpleados.Columns["idProveedor"].Visible = false;
+        }
+        public void colorDataGridview()
+        {
+            dgvBusquedaEmpleados.ForeColor = Color.FromArgb(5, 15, 40);
         }
     }
 }

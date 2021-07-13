@@ -40,7 +40,8 @@ namespace GUI
 
         private void btnAgregarProveedor_Click(object sender, EventArgs e)
         {
-            Regex reNombre = new Regex("^[a-zA-Z]*$", RegexOptions.Compiled);
+            #region validacion en presentación
+            Regex reNombre = new Regex("^[a-zA-Z0-9_ ]*$", RegexOptions.Compiled);
             if (!reNombre.IsMatch(txtNombre.Text))
             {
                 errorProvider1.SetError(txtNombre, "Debe colocar un nombre valido");
@@ -65,11 +66,21 @@ namespace GUI
                 return;
             }
             errorProvider1.SetError(txtDescripcion, "");
+            #endregion
+
             conversionesProvedor();
-            MessageBox.Show(BProveedor.insertarProveedor(nombrePro, telefono,descripcion,stat));
+            MessageBox.Show(BProveedor.insertarProveedor(nombrePro, telefono,descripcion,stat), "Proveedores", MessageBoxButtons.OK, MessageBoxIcon.Information);
             limpiarAgregado();
         }
-
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            conversionesProvedor();
+            idProveedor = Convert.ToInt32(lblIdProveedor.Text);
+            MessageBox.Show(BProveedor.actualizarProveedor(nombrePro, telefono, descripcion, idProveedor), "Proveedores", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            cmbBusProveedor.Text = "";
+            limpiarAgregado();
+            cargarProveedores();
+        }
         #endregion
 
         #region limpieza de controles
@@ -80,6 +91,7 @@ namespace GUI
             txtDescripcion.Text = "";
         }
         #endregion region 
+        #region busquedaPorcontroles
 
         private void cmbBusProveedor_TextUpdate(object sender, EventArgs e)
         {
@@ -95,6 +107,7 @@ namespace GUI
             
         }
 
+        #endregion
         private void btnBuscarProveedor_Click(object sender, EventArgs e)
         {
             cmbBusProveedor.Text = "";
@@ -108,14 +121,7 @@ namespace GUI
             txtDescripcion.Text = dgvResBusquedaProveedor.CurrentRow.Cells[3].Value.ToString();
         }
 
-        private void btnActualizar_Click(object sender, EventArgs e)
-        {
-            conversionesProvedor();
-            MessageBox.Show(BProveedor.actualizarProveedor(nombrePro, telefono, descripcion, idProveedor));
-            cmbBusProveedor.Text = "";            
-            limpiarAgregado();
-            cargarProveedores();
-        }
+       
 
         private void conversionesProvedor()
         {
@@ -123,7 +129,7 @@ namespace GUI
             telefono = txtTelefono.Text;
             descripcion = txtDescripcion.Text.ToUpper();
             stat = 1;
-            idProveedor =Convert.ToInt32(lblIdProveedor.Text);
+            
 
         }
         public void cargarProveedores()

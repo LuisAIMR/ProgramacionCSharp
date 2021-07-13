@@ -75,13 +75,13 @@ namespace DAL
             }
             return success;
         }
-        public DataTable mostrarDevolucion()
+        public DataTable mostrarDevoluciones()
         {
             var tablaMostrarDevolucion = new DataTable();
             try
             {
                 conexion.abrir();
-                var cmd = new SqlCommand("SP_BUSCARDEVOLUCION", conexion.conectarbd);
+                var cmd = new SqlCommand("SP_MOSTRARDEVOLUCIONES", conexion.conectarbd);
                 var reader = cmd.ExecuteReader();
 
                 if (reader.HasRows == false)

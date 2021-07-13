@@ -7,14 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Business;
 
 namespace GUI
 {
     public partial class frmDevolucion : Form
     {
+        private B_OperacionesDevoluciones BDevolucion = new B_OperacionesDevoluciones();
         public frmDevolucion()
         {
             InitializeComponent();
+            cargarDevoluciones();
+            colorDataGridview();
         }
 
         private void tmrFech_Tick(object sender, EventArgs e)
@@ -52,6 +56,14 @@ namespace GUI
         }
         #endregion
 
-
+        public void cargarDevoluciones()
+        {
+            dgvResBusquedaDevoluciones.DataSource = BDevolucion.MostrarDevoluciones();
+            //dgvResBusquedaProveedor.Columns["idProveedor"].Visible = false;
+        }
+        public void colorDataGridview()
+        {
+            dgvResBusquedaDevoluciones.ForeColor = Color.FromArgb(5, 15, 40);
+        }
     }
 }

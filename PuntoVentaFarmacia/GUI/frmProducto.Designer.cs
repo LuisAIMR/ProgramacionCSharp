@@ -89,6 +89,7 @@ namespace GUI
             this.lblFecha = new System.Windows.Forms.Label();
             this.tmrFech = new System.Windows.Forms.Timer(this.components);
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.lblIdProducto = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nudLote)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPrecio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).BeginInit();
@@ -233,6 +234,7 @@ namespace GUI
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(68)))), ((int)(((byte)(79)))));
+            this.panel1.Controls.Add(this.lblIdProducto);
             this.panel1.Controls.Add(this.lblTipo);
             this.panel1.Controls.Add(this.lblProductos);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -708,6 +710,7 @@ namespace GUI
             this.dgvResBusquedaProd.Name = "dgvResBusquedaProd";
             this.dgvResBusquedaProd.Size = new System.Drawing.Size(650, 259);
             this.dgvResBusquedaProd.TabIndex = 30;
+            this.dgvResBusquedaProd.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvResBusquedaProd_CellContentClick);
             // 
             // cmbBusNombreProducto
             // 
@@ -864,6 +867,15 @@ namespace GUI
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // lblIdProducto
+            // 
+            this.lblIdProducto.AutoSize = true;
+            this.lblIdProducto.Location = new System.Drawing.Point(286, 14);
+            this.lblIdProducto.Name = "lblIdProducto";
+            this.lblIdProducto.Size = new System.Drawing.Size(35, 13);
+            this.lblIdProducto.TabIndex = 26;
+            this.lblIdProducto.Text = "label9";
+            // 
             // frmProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -962,5 +974,6 @@ namespace GUI
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DataGridView dgvResBusquedaProd;
         private System.Windows.Forms.Label lblTipo;
+        private System.Windows.Forms.Label lblIdProducto;
     }
 }

@@ -11,11 +11,11 @@ namespace DAL
     public class D_Cliente
     {
         private D_Conexion conexion = new D_Conexion();
-        private D_Persona dPersona = new D_Persona();
+        public D_Persona dPersona = new D_Persona();
         public int idPersonaC { get; set; }
         public string alias { get; set; }
         public int punAcum { get; set; }
-        public bool stat { get; set; }
+        public int stat { get; set; }
         public int idPersona { get; set; }
 
         public bool Insertar()
@@ -27,10 +27,15 @@ namespace DAL
 
                 var cmd = new SqlCommand("SP_INSERTARCLIENTE", conexion.conectarbd);
                 cmd.CommandType = CommandType.StoredProcedure;
-                //cmd.Parameters.AddWithValue("@", );
-                //cmd.Parameters.AddWithValue("@", );
-                //cmd.Parameters.AddWithValue("@", );
-                //cmd.Parameters.AddWithValue("@", stat);
+                cmd.Parameters.AddWithValue("@nombre",dPersona.nombre);
+                cmd.Parameters.AddWithValue("@apPat", dPersona.apPat);
+                cmd.Parameters.AddWithValue("@apMat", dPersona.apMat);
+                cmd.Parameters.AddWithValue("@fechaNac", dPersona.fechaNac);
+                cmd.Parameters.AddWithValue("@curp", dPersona.curp);
+                cmd.Parameters.AddWithValue("@telefono", dPersona.telefono);
+                cmd.Parameters.AddWithValue("@alias", alias);
+                cmd.Parameters.AddWithValue("@punAcum", punAcum);
+                cmd.Parameters.AddWithValue("@stat", stat);
                 var resultado = cmd.ExecuteNonQuery();
 
                 if (resultado == 1)
@@ -44,20 +49,25 @@ namespace DAL
             }
             return success;
         }
-        public bool actualizaRCliente()
+        public bool Actualizar()
         {
             bool success = false;
             try
             {
                 conexion.abrir();
-               
 
                 var cmd = new SqlCommand("SP_ACTUALIZARCLIENTE", conexion.conectarbd);
                 cmd.CommandType = CommandType.StoredProcedure;
-                //cmd.Parameters.AddWithValue("@", );
-                //cmd.Parameters.AddWithValue("@", );
-                //cmd.Parameters.AddWithValue("@", );
-                //cmd.Parameters.AddWithValue("@", );
+                cmd.Parameters.AddWithValue("@idPersona", dPersona.idPersona);
+                cmd.Parameters.AddWithValue("@nombre", dPersona.nombre);
+                cmd.Parameters.AddWithValue("@apPat", dPersona.apPat);
+                cmd.Parameters.AddWithValue("@apMat", dPersona.apMat);
+                cmd.Parameters.AddWithValue("@fechaNac", dPersona.fechaNac);
+                cmd.Parameters.AddWithValue("@curp", dPersona.curp);
+                cmd.Parameters.AddWithValue("@telefono", dPersona.telefono);
+                cmd.Parameters.AddWithValue("@alias", alias);
+                cmd.Parameters.AddWithValue("@punAcum", punAcum);
+                cmd.Parameters.AddWithValue("@stat", stat);
                 var resultado = cmd.ExecuteNonQuery();
 
                 if (resultado == 1)
@@ -71,13 +81,13 @@ namespace DAL
             }
             return success;
         }
-        public DataTable mostrarCliente()
+        public DataTable mostrarClientes()
         {
             var tablaMostrarCliente = new DataTable();
             try
             {
                 conexion.abrir();
-                var cmd = new SqlCommand("SP_BUSCARCLIENTE", conexion.conectarbd);
+                var cmd = new SqlCommand("SP_MOSTRARCLIENTES", conexion.conectarbd);
                 var reader = cmd.ExecuteReader();
 
                 if (reader.HasRows == false)
@@ -110,12 +120,17 @@ namespace DAL
 
                 var cmd = new SqlCommand("SP_BUSQUEDACLIENTE", conexion.conectarbd);
                 cmd.CommandType = CommandType.StoredProcedure;
-                //cmd.Parameters.AddWithValue("@", );
+                cmd.Parameters.AddWithValue("@nombre",dPersona.nombre );
+                cmd.Parameters.AddWithValue("@apPat ",dPersona.apMat );                
+                cmd.Parameters.AddWithValue("@curp ", dPersona.curp);
+                cmd.Parameters.AddWithValue("@alias", alias);
                 var reader = cmd.ExecuteReader();
 
                 if (reader.HasRows == false)
+                {
+                    reader.Close();
                     return null;
-
+                }
                 tablaBuscarCliente.Load(reader);
                 conexion.cerrar();
             }

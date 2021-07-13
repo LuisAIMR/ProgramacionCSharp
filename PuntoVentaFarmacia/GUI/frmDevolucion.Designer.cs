@@ -63,18 +63,7 @@ namespace GUI
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnBuscarProducto = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
-            this.dgvResBusquedaProd = new System.Windows.Forms.DataGridView();
-            this.Lote = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcióndelproducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PuntosParaCanjeo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PuntosDeCanjeo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaCad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ReqPatente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvResBusquedaDevoluciones = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudLote)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudNuevoPrecio)).BeginInit();
@@ -85,7 +74,7 @@ namespace GUI
             this.gbxBusqueda.SuspendLayout();
             this.gbxFiltro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudBusLote)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvResBusquedaProd)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvResBusquedaDevoluciones)).BeginInit();
             this.SuspendLayout();
             // 
             // nudCantidad
@@ -326,11 +315,11 @@ namespace GUI
             this.gbxBusqueda.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbxBusqueda.Controls.Add(this.dgvResBusquedaDevoluciones);
             this.gbxBusqueda.Controls.Add(this.gbxFiltro);
             this.gbxBusqueda.Controls.Add(this.btnEliminar);
             this.gbxBusqueda.Controls.Add(this.btnBuscarProducto);
             this.gbxBusqueda.Controls.Add(this.btnActualizar);
-            this.gbxBusqueda.Controls.Add(this.dgvResBusquedaProd);
             this.gbxBusqueda.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.gbxBusqueda.Location = new System.Drawing.Point(372, 19);
             this.gbxBusqueda.Name = "gbxBusqueda";
@@ -468,83 +457,16 @@ namespace GUI
             this.btnActualizar.Text = "ACTUALIZAR PRODUCTO";
             this.btnActualizar.UseVisualStyleBackColor = false;
             // 
-            // dgvResBusquedaProd
+            // dgvResBusquedaDevoluciones
             // 
-            this.dgvResBusquedaProd.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvResBusquedaDevoluciones.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvResBusquedaProd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvResBusquedaProd.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Lote,
-            this.Nombre,
-            this.Tipo,
-            this.Descripcióndelproducto,
-            this.Precio,
-            this.Cantidad,
-            this.PuntosParaCanjeo,
-            this.PuntosDeCanjeo,
-            this.FechaCad,
-            this.ReqPatente,
-            this.Status});
-            this.dgvResBusquedaProd.Location = new System.Drawing.Point(14, 122);
-            this.dgvResBusquedaProd.Name = "dgvResBusquedaProd";
-            this.dgvResBusquedaProd.Size = new System.Drawing.Size(650, 312);
-            this.dgvResBusquedaProd.TabIndex = 25;
-            // 
-            // Lote
-            // 
-            this.Lote.HeaderText = "Lote";
-            this.Lote.Name = "Lote";
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            // 
-            // Tipo
-            // 
-            this.Tipo.HeaderText = "Tipo";
-            this.Tipo.Name = "Tipo";
-            // 
-            // Descripcióndelproducto
-            // 
-            this.Descripcióndelproducto.HeaderText = "Descripción del producto";
-            this.Descripcióndelproducto.Name = "Descripcióndelproducto";
-            // 
-            // Precio
-            // 
-            this.Precio.HeaderText = "Precio";
-            this.Precio.Name = "Precio";
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.Name = "Cantidad";
-            // 
-            // PuntosParaCanjeo
-            // 
-            this.PuntosParaCanjeo.HeaderText = "Puntos para canjeo";
-            this.PuntosParaCanjeo.Name = "PuntosParaCanjeo";
-            // 
-            // PuntosDeCanjeo
-            // 
-            this.PuntosDeCanjeo.HeaderText = "Puntos de canjeo";
-            this.PuntosDeCanjeo.Name = "PuntosDeCanjeo";
-            // 
-            // FechaCad
-            // 
-            this.FechaCad.HeaderText = "Fecha de caducidad";
-            this.FechaCad.Name = "FechaCad";
-            // 
-            // ReqPatente
-            // 
-            this.ReqPatente.HeaderText = "Requiere patente";
-            this.ReqPatente.Name = "ReqPatente";
-            // 
-            // Status
-            // 
-            this.Status.HeaderText = "Status";
-            this.Status.Name = "Status";
+            this.dgvResBusquedaDevoluciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvResBusquedaDevoluciones.Location = new System.Drawing.Point(6, 125);
+            this.dgvResBusquedaDevoluciones.Name = "dgvResBusquedaDevoluciones";
+            this.dgvResBusquedaDevoluciones.Size = new System.Drawing.Size(658, 309);
+            this.dgvResBusquedaDevoluciones.TabIndex = 58;
             // 
             // frmDevolucion
             // 
@@ -572,7 +494,7 @@ namespace GUI
             this.gbxFiltro.ResumeLayout(false);
             this.gbxFiltro.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudBusLote)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvResBusquedaProd)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvResBusquedaDevoluciones)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -602,18 +524,6 @@ namespace GUI
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnBuscarProducto;
         private System.Windows.Forms.Button btnActualizar;
-        private System.Windows.Forms.DataGridView dgvResBusquedaProd;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Lote;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcióndelproducto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PuntosParaCanjeo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PuntosDeCanjeo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FechaCad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ReqPatente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
         private System.Windows.Forms.ComboBox cmbBusTipoProducto;
         private System.Windows.Forms.Label lblBusTipoProducto;
         private System.Windows.Forms.Label lblBusNombreProducto;
@@ -623,5 +533,6 @@ namespace GUI
         private System.Windows.Forms.TextBox txtMotivo;
         private System.Windows.Forms.GroupBox gbxFiltro;
         private System.Windows.Forms.ComboBox cmbNombreProducto;
+        private System.Windows.Forms.DataGridView dgvResBusquedaDevoluciones;
     }
 }

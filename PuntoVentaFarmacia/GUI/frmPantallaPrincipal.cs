@@ -8,10 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using System.Linq;
 using FontAwesome.Sharp;
 using MaterialSkin;
 using System.Data.SqlClient;
-using DAL;
 using Business;
 
 namespace GUI
@@ -19,24 +19,22 @@ namespace GUI
     public partial class frmPantallaPrincipal : Form
     {
         private B_OperacionesEmpleados BEmpleado = new B_OperacionesEmpleados();
-        public string usuarioLogeado="",contrasenaLogeada="";
-        public frmPantallaPrincipal()
-        {
+        public frmPantallaPrincipal( int ID)
+        {            
             InitializeComponent();
             abrirForm<frmBienvenida>();
             mostrarMensajes();
-            //cargarDatosEmpleado();
+            cargarDatosEmpleado(ID);
+
+            //Convert.ToInt32(lblIdEmpleado.Text);
         }
+        
         private void frmPantallaPrincipal_Load(object sender, EventArgs e)
         {
-            //Conexion conexionDB = new Conexion();
-            //conexionDB.abrir();
-            //string cadena = "";
-            //SqlCommand comando = new SqlCommand(cadena,conexionDB.conectarbd);
-            //SqlDataAdapter adapdator = new SqlDataAdapter(comando);
-            //DataTable empleadoTablaPantalla = new DataTable();
-            //adapdator.Fill(empleadoTablaPantalla);
-            
+            lblIdEmpleado.Text = dgvCargarDatosEmpleado.CurrentRow.Cells[0].Value.ToString();
+            lblNombre.Text = dgvCargarDatosEmpleado.CurrentRow.Cells[1].Value.ToString();
+            lblPuesto.Text = dgvCargarDatosEmpleado.CurrentRow.Cells[2].Value.ToString();               
+            dgvCargarDatosEmpleado.Visible = false;
         }
         #region usos libreria System.Runtime.InteropServices;
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -75,7 +73,11 @@ namespace GUI
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            if (MessageBox.Show("¿Desea salir de la aplicación?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+
+                Application.Exit();
+            }            
         }
         #endregion
 
@@ -271,10 +273,21 @@ namespace GUI
 
         private void btnVentas_Click(object sender, EventArgs e)
         {
-            abrirForm<frmVenta>();          
+            abrirForm <frmVenta>();          
             SeguirBoton((FontAwesome.Sharp.IconButton)sender);
             seleccionarBoton((FontAwesome.Sharp.IconButton)sender);
-           
+
+            frmVenta f1 = Application.OpenForms.OfType<frmVenta>().SingleOrDefault();
+            if (f1 != null)
+            { 
+                f1.lblIdEmpleadoVenta.Text = lblIdEmpleado.Text;
+            }
+            //IForm formInterface = this.Owner as IForm;
+
+            //if (formInterface != null)
+            //    formInterface.ChangeTextBoxText(lblIdEmpleado.Text);
+
+
         }
 
         private void btnDevolucion_Click(object sender, EventArgs e)
@@ -460,18 +473,26 @@ namespace GUI
 
         private void btnRegresar_Click(object sender, EventArgs e)
         {
-            this.Close();
-            frmLog log = new frmLog();
-            log.Show();
-            
+            if (MessageBox.Show("¿Desea cerrar sesión?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+
+                this.Close();
+                frmLog log = new frmLog();
+                log.Show();
+            }
 
         }                
       
         private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
-            this.Close();
-            frmLog log = new frmLog();
-            log.Show();
+            if (MessageBox.Show("¿Desea cerrar sesión?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+
+                this.Close();
+                frmLog log = new frmLog();
+                log.Show();
+            }
+            
         }
 
         public void mostrarMensajes()
@@ -497,9 +518,12 @@ namespace GUI
 
         private void btnCerrarSesion_Click_1(object sender, EventArgs e)
         {
-            this.Close();
-            frmLog log = new frmLog();
-            log.Show();
+            if (MessageBox.Show("¿Desea cerrar sesión?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.Close();
+                frmLog log = new frmLog();
+                log.Show();
+            }           
         }
 
 
@@ -513,11 +537,10 @@ namespace GUI
             
         }
 
-        public void cargarDatosEmpleado()
+        public void cargarDatosEmpleado( int idEmpleado)
         {
-            var lista = BEmpleado.MostrarDatosEmpleado(usuarioLogeado,contrasenaLogeada);
-            lblPuesto.Text = lista.Rows[0].ToString();
-            lblNombre.Text= lista.Rows[2].ToString();
-        }
+            dgvCargarDatosEmpleado.DataSource = BEmpleado.MostrarDatosEmpleado(idEmpleado);
+            dgvCargarDatosEmpleado.Columns["idPersona"].Visible = false;
+        }        
     }
 }

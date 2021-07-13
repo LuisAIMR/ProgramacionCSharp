@@ -63,7 +63,7 @@ namespace Business
                 throw;
             }
         }
-        public string insertarProductoTipo2(string lote, string nombreP, string descripcion, float precio, int puntosCanejo, int cantidadP, int PuntosP, int stat, int idTipo, string fechaCad, int ReqReceta )
+        public string insertarProductoTipo2(string lote, string nombreP, string descripcion, float precio, int puntosCanejo, int cantidadP, int PuntosP, int stat, int idTipo, DateTime fechaCad, int ReqReceta )
         {
             try
             {
@@ -102,8 +102,20 @@ namespace Business
         //        throw;
         //    }
         //}
-      
 
+        public DataTable MostrarProductos()
+        {
+            try
+            {
+
+                return dProducto.mostrarProductos();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+        }
     }
 
 }

@@ -69,6 +69,7 @@ namespace GUI
             this.btnBuscarCliente = new System.Windows.Forms.Button();
             this.dgvBusquedaClientes = new System.Windows.Forms.DataGridView();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.lblIdCliente = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.gbxDatosPersonales.SuspendLayout();
@@ -167,6 +168,7 @@ namespace GUI
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(68)))), ((int)(((byte)(79)))));
+            this.panel1.Controls.Add(this.lblIdCliente);
             this.panel1.Controls.Add(this.lblClientes);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -331,7 +333,6 @@ namespace GUI
             this.groupBox1.Controls.Add(this.btnEliminar);
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.btnActualizar);
-            this.groupBox1.Controls.Add(this.btnBuscarCliente);
             this.groupBox1.Controls.Add(this.dgvBusquedaClientes);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.groupBox1.Location = new System.Drawing.Point(295, 54);
@@ -364,6 +365,7 @@ namespace GUI
             this.groupBox3.Controls.Add(this.txtBusAlias);
             this.groupBox3.Controls.Add(this.label13);
             this.groupBox3.Controls.Add(this.label11);
+            this.groupBox3.Controls.Add(this.btnBuscarCliente);
             this.groupBox3.Controls.Add(this.txtBusNombreCliente);
             this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Controls.Add(this.txtBusCurp);
@@ -372,7 +374,7 @@ namespace GUI
             this.groupBox3.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.groupBox3.Location = new System.Drawing.Point(16, 16);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(731, 93);
+            this.groupBox3.Size = new System.Drawing.Size(731, 99);
             this.groupBox3.TabIndex = 51;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Filtros";
@@ -410,6 +412,7 @@ namespace GUI
             this.txtBusNombreCliente.Name = "txtBusNombreCliente";
             this.txtBusNombreCliente.Size = new System.Drawing.Size(100, 20);
             this.txtBusNombreCliente.TabIndex = 1;
+            this.txtBusNombreCliente.TextChanged += new System.EventHandler(this.txtBusNombreCliente_TextChanged);
             // 
             // label8
             // 
@@ -460,6 +463,7 @@ namespace GUI
             this.btnActualizar.TabIndex = 33;
             this.btnActualizar.Text = "ACTUALIZAR CLIENTE";
             this.btnActualizar.UseVisualStyleBackColor = false;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // btnBuscarCliente
             // 
@@ -470,13 +474,13 @@ namespace GUI
             this.btnBuscarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscarCliente.Font = new System.Drawing.Font("Malgun Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscarCliente.ForeColor = System.Drawing.Color.Transparent;
-            this.btnBuscarCliente.Location = new System.Drawing.Point(495, 125);
+            this.btnBuscarCliente.Location = new System.Drawing.Point(431, 56);
             this.btnBuscarCliente.Name = "btnBuscarCliente";
             this.btnBuscarCliente.Size = new System.Drawing.Size(252, 27);
             this.btnBuscarCliente.TabIndex = 32;
             this.btnBuscarCliente.Text = "BUSCAR CLIENTE";
             this.btnBuscarCliente.UseVisualStyleBackColor = false;
-            this.btnBuscarCliente.Click += new System.EventHandler(this.btnBuscarCliente_Click);
+            this.btnBuscarCliente.Click += new System.EventHandler(this.btnTerminarBusqueda_Click);
             // 
             // dgvBusquedaClientes
             // 
@@ -484,14 +488,24 @@ namespace GUI
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvBusquedaClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBusquedaClientes.Location = new System.Drawing.Point(16, 161);
+            this.dgvBusquedaClientes.Location = new System.Drawing.Point(16, 121);
             this.dgvBusquedaClientes.Name = "dgvBusquedaClientes";
-            this.dgvBusquedaClientes.Size = new System.Drawing.Size(731, 295);
+            this.dgvBusquedaClientes.Size = new System.Drawing.Size(731, 335);
             this.dgvBusquedaClientes.TabIndex = 0;
+            this.dgvBusquedaClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBusquedaClientes_CellContentClick);
             // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
+            // 
+            // lblIdCliente
+            // 
+            this.lblIdCliente.AutoSize = true;
+            this.lblIdCliente.Location = new System.Drawing.Point(150, 13);
+            this.lblIdCliente.Name = "lblIdCliente";
+            this.lblIdCliente.Size = new System.Drawing.Size(0, 13);
+            this.lblIdCliente.TabIndex = 25;
+            this.lblIdCliente.Visible = false;
             // 
             // frmCliente
             // 
@@ -561,5 +575,6 @@ namespace GUI
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Label lblIdCliente;
     }
 }

@@ -61,44 +61,32 @@ namespace GUI
         #region controles de acceso y registro de usuario
         private void btnAcceder_Click(object sender, EventArgs e)
         {
-            ValidarLogeo();
-             
-            if (txtUsuario.Text == usuario)
-            {
-                if (txtContrasena.Text == contra)
-                {
-                    this.Hide();
-                    frmPantallaPrincipal bienvenida = new frmPantallaPrincipal();
-                    bienvenida.usuarioLogeado = txtUsuario.Text;
-                    bienvenida.contrasenaLogeada = txtContrasena.Text;
-                    bienvenida.Show();
-                    pbxContra.IconColor = Color.Green;
-                }
-                else
-                {
-                    MessageBox.Show("Contraseña no valida", "LOGIN", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    pbxContra.IconColor = Color.Red;
-                }
-                pbxUser.IconColor = Color.Green;
+            var IdUsuario = BEmpleado.validarUsuario(txtUsuario.Text,txtContrasena.Text);
 
+            if (Convert.ToInt32(IdUsuario.Rows[0][0].ToString()) != 0)
+            {
+
+                    
+                    frmPantallaPrincipal bienvenida = new frmPantallaPrincipal(Convert.ToInt32(IdUsuario.Rows[0][0].ToString()));
+                    bienvenida.Show();                       
+                    this.Hide();
             }
             else
             {
-                MessageBox.Show("Usuario no valido", "LOGIN", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                pbxUser.IconColor = Color.Red;
+                MessageBox.Show("Datos ingresados no validos", "LOGIN", MessageBoxButtons.OK, MessageBoxIcon.Error);                
             }
-            regresarUser();
         }
         private void txtContrasena_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if(e.KeyChar==Convert.ToChar(Keys.Enter))
+            var IdUsuario = BEmpleado.validarUsuario(txtUsuario.Text, txtContrasena.Text);
+            if (e.KeyChar==Convert.ToChar(Keys.Enter))
             {
                 if (txtUsuario.Text == "ADMIN")
                 {
                     if (txtContrasena.Text == "ElAdmin")
                     {
                         this.Hide();
-                        frmPantallaPrincipal bienvenida = new frmPantallaPrincipal();
+                        frmPantallaPrincipal bienvenida = new frmPantallaPrincipal(Convert.ToInt32(IdUsuario.Rows[0][0].ToString()));
                         bienvenida.Show();
                         pbxContra.IconColor = Color.Green;
                     }
@@ -533,26 +521,7 @@ namespace GUI
                 txtTelefono.Text = "TELÉFONO";
                 txtTelefono.ForeColor = Color.Gray;
             }
-        }
-
-        private bool ValidarLogeo()
-        {
-            bool estado;
-            var lista = BEmpleado.validarUsuario(txtUsuario.Text, txtContrasena.Text);
-            if(lista != null)
-            {
-                usuario = lista.Rows[0].ToString();
-                contra = lista.Rows[1].ToString();
-                estado = true;
-            }
-            else
-            {
-                estado = false;
-            }
-            return estado;
-            
-
-        }
+        }        
         private void regresarUser()
         {
             usuario = "";

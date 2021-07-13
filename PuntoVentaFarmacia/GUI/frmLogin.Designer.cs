@@ -81,7 +81,7 @@ namespace GUI
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.dgvValidacionUsuario = new System.Windows.Forms.DataGridView();
+            this.lblPruebaEmpleado = new System.Windows.Forms.Label();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxlogo)).BeginInit();
             this.BarraSuperior.SuspendLayout();
@@ -103,13 +103,12 @@ namespace GUI
             ((System.ComponentModel.ISupportInitialize)(this.btnOcultarC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMostarC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvValidacionUsuario)).BeginInit();
             this.SuspendLayout();
             // 
             // panelLogo
             // 
             this.panelLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(40)))));
-            this.panelLogo.Controls.Add(this.dgvValidacionUsuario);
+            this.panelLogo.Controls.Add(this.lblPruebaEmpleado);
             this.panelLogo.Controls.Add(this.pbxlogo);
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
@@ -196,8 +195,8 @@ namespace GUI
             // 
             // pnlContenedor
             // 
-            this.pnlContenedor.Controls.Add(this.pnlRegistro);
             this.pnlContenedor.Controls.Add(this.pnlDeAcceso);
+            this.pnlContenedor.Controls.Add(this.pnlRegistro);
             this.pnlContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlContenedor.Location = new System.Drawing.Point(292, 35);
             this.pnlContenedor.Name = "pnlContenedor";
@@ -741,13 +740,14 @@ namespace GUI
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // dgvValidacionUsuario
+            // lblPruebaEmpleado
             // 
-            this.dgvValidacionUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvValidacionUsuario.Location = new System.Drawing.Point(72, 244);
-            this.dgvValidacionUsuario.Name = "dgvValidacionUsuario";
-            this.dgvValidacionUsuario.Size = new System.Drawing.Size(149, 67);
-            this.dgvValidacionUsuario.TabIndex = 1;
+            this.lblPruebaEmpleado.AutoSize = true;
+            this.lblPruebaEmpleado.Location = new System.Drawing.Point(116, 251);
+            this.lblPruebaEmpleado.Name = "lblPruebaEmpleado";
+            this.lblPruebaEmpleado.Size = new System.Drawing.Size(13, 13);
+            this.lblPruebaEmpleado.TabIndex = 1;
+            this.lblPruebaEmpleado.Text = "4";
             // 
             // frmLog
             // 
@@ -764,6 +764,7 @@ namespace GUI
             this.Opacity = 0.9D;
             this.Text = "LOGIN";
             this.panelLogo.ResumeLayout(false);
+            this.panelLogo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxlogo)).EndInit();
             this.BarraSuperior.ResumeLayout(false);
             this.BarraSuperior.PerformLayout();
@@ -787,7 +788,6 @@ namespace GUI
             ((System.ComponentModel.ISupportInitialize)(this.btnOcultarC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMostarC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvValidacionUsuario)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -844,7 +844,7 @@ namespace GUI
         private System.Windows.Forms.Label label1;
         private Metroit.Windows.Forms.MetDateTimePicker dtpFechaNac;
         private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.Windows.Forms.DataGridView dgvValidacionUsuario;
+        private System.Windows.Forms.Label lblPruebaEmpleado;
     }
 }
 

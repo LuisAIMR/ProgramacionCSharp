@@ -9,17 +9,16 @@ using DAL;
 namespace Business
 {
     public class B_OperacionesEmpleados
-    {
-        private D_Usuario dUsuario = new D_Usuario();
+    {        
         private D_Empleado dEmpleado = new D_Empleado();
         public DataTable validarUsuario(string alias, string contra)
         {
 
             try
             {
-                dUsuario.alias = alias;
-                dUsuario.contra = contra;
-                return dUsuario.validarUsuario();
+                dEmpleado.dUsuario.alias = alias;
+                dEmpleado.dUsuario.contra = contra;
+                return dEmpleado.validarEmpleado();
 
             }
             catch (Exception)
@@ -28,13 +27,12 @@ namespace Business
             }
 
         }
-        public DataTable MostrarDatosEmpleado(string alias, string contra)
+        public DataTable MostrarDatosEmpleado(int idEmpleado)
         {
 
             try
             {
-                dUsuario.alias = alias;
-                dUsuario.contra = contra;
+                dEmpleado.dPersona.idPersona = idEmpleado;
                 return dEmpleado.CargarDatosEmpleado();
 
             }
@@ -44,6 +42,44 @@ namespace Business
             }
 
         }
+        public DataTable MostrarEmpleados()
+        {
+            try
+            {
 
+                return dEmpleado.mostrarEmpleados();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+        }
+        public DataTable MostrarTurnos()
+        {
+            try
+            {
+
+                return dEmpleado.mostrarTurnos();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+        }
+        public DataTable MostrarPuestos()
+        {
+            try
+            {
+
+                return dEmpleado.mostrarPuestos();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+        }
     }
 }

@@ -11,8 +11,8 @@ namespace DAL
     public class D_Empleado
     {
         private D_Conexion conexion = new D_Conexion();
-        private D_Persona dPersona = new D_Persona();
-        private D_Usuario dUsuario = new D_Usuario();
+        public D_Persona dPersona = new D_Persona();
+        public D_Usuario dUsuario = new D_Usuario();
         public int idPersonaE { get; set; }
         public byte imagenEmp { get; set; }
         public int stat { get; set; }
@@ -73,13 +73,13 @@ namespace DAL
             }
             return success;
         }
-        public DataTable mostrarEmpleado()
+        public DataTable mostrarEmpleados()
         {
             var tablaMostrarEmpleado = new DataTable();
             try
             {
                 conexion.abrir();
-                var cmd = new SqlCommand("SP_BUSCAREMPLEADO", conexion.conectarbd);
+                var cmd = new SqlCommand("SP_MOSTRAREMPLEADOS", conexion.conectarbd);
                 var reader = cmd.ExecuteReader();
 
                 if (reader.HasRows == false)
@@ -136,10 +136,9 @@ namespace DAL
                 conexion.abrir();
 
 
-                var cmd = new SqlCommand("SP_MUESTRADATOSEMPLEADO", conexion.conectarbd);
+                var cmd = new SqlCommand("SP_CARGAREMPLEADOSISTEMA", conexion.conectarbd);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@alias", dUsuario.alias);
-                cmd.Parameters.AddWithValue("@contra", dUsuario.contra);
+                cmd.Parameters.AddWithValue("@idPersona", dPersona.idPersona);
                 var reader = cmd.ExecuteReader();
 
                 if (reader.HasRows == false)
@@ -154,6 +153,86 @@ namespace DAL
             }
             return tablaDatosEmpleado;
 
+        }
+        public DataTable validarEmpleado()
+        {
+            var Success = new DataTable();
+            try
+            {
+                conexion.abrir();
+
+
+                var cmd = new SqlCommand("SP_VALIDARUSUARIOBASEDEDATOS", conexion.conectarbd);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@usuario", dUsuario.alias);
+                cmd.Parameters.AddWithValue("@contra", dUsuario.contra);
+                var reader = cmd.ExecuteReader();
+
+                if (reader.HasRows == false)
+                {
+                    reader.Close();
+                    return null;
+                }
+
+                Success.Load(reader);
+                conexion.cerrar();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return Success;
+
+        }
+        public DataTable mostrarTurnos()
+        {
+            var tablaMostrarTurnos = new DataTable();
+            try
+            {
+                conexion.abrir();
+                var cmd = new SqlCommand("SP_MOSTRARTURNOS", conexion.conectarbd);
+                var reader = cmd.ExecuteReader();
+
+                if (reader.HasRows == false)
+                {
+                    reader.Close();
+                    return null;
+                }
+
+
+                tablaMostrarTurnos.Load(reader);
+                conexion.cerrar();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return tablaMostrarTurnos;
+        }
+        public DataTable mostrarPuestos()
+        {
+            var tablaMostrarPuestos = new DataTable();
+            try
+            {
+                conexion.abrir();
+                var cmd = new SqlCommand("SP_MOSTRARPUESTOS", conexion.conectarbd);
+                var reader = cmd.ExecuteReader();
+
+                if (reader.HasRows == false)
+                {
+                    reader.Close();
+                    return null;
+                }
+
+
+                tablaMostrarPuestos.Load(reader);
+                conexion.cerrar();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return tablaMostrarPuestos;
         }
 
     }

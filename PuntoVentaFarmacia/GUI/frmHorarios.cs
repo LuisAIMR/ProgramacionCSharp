@@ -7,14 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Business;
 
 namespace GUI
 {
     public partial class frmHorarios : Form
     {
+        private B_OperacionesEmpleados BEmpleado = new B_OperacionesEmpleados();
         public frmHorarios()
         {
             InitializeComponent();
+            cargarTurnos();
+            cargarPuestos();
+            colorDataGridview();
         }
 
         private void tmrFech_Tick(object sender, EventArgs e)
@@ -160,5 +165,21 @@ namespace GUI
             cmbHorBusTipoTurno.Text = "";
         }
         #endregion
+
+        public void cargarPuestos()
+        {
+            dgvBusPuesto.DataSource = BEmpleado.MostrarPuestos();
+            //dgvBusPuestor.Columns["idProveedor"].Visible = false;
+        }       
+        public void cargarTurnos()
+        {
+            dgvBusTurno.DataSource = BEmpleado.MostrarTurnos();
+            //dgvBusPuestor.Columns["idProveedor"].Visible = false;
+        }
+        public void colorDataGridview()
+        {
+            dgvBusPuesto.ForeColor = Color.FromArgb(5, 15, 40);
+            dgvBusTurno.ForeColor = Color.FromArgb(5, 15, 40);
+        }
     }
 }

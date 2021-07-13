@@ -151,7 +151,7 @@ namespace DAL
             try
             {
                 conexion.abrir();
-                var cmd = new SqlCommand("SP_MOSTRARPRODUCTOS", conexion.conectarbd);
+                var cmd = new SqlCommand("SP_MOSTRARPRODUCTOSPRODUCTOS", conexion.conectarbd);
                 var reader = cmd.ExecuteReader();
 
                 if (reader.HasRows == false)

@@ -71,13 +71,13 @@ namespace DAL
             }
             return success;
         }
-        public DataTable mostrarBaja()
+        public DataTable mostrarBajas()
         {
             var tablaMostrarBaja = new DataTable();
             try
             {
                 conexion.abrir();
-                var cmd = new SqlCommand("SP_BUSCARBAJAS", conexion.conectarbd);
+                var cmd = new SqlCommand("SP_MOSTRARBAJAS", conexion.conectarbd);
                 var reader = cmd.ExecuteReader();
 
                 if (reader.HasRows == false)

@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
 using System.Data.SqlClient;
-using DAL;
 using Business;
 
 namespace GUI
@@ -21,7 +20,8 @@ namespace GUI
         int statTipo;
 
         public B_OperacionesProductos BProducto = new B_OperacionesProductos();
-        string lote, nombreP, descripcion, fechaCad;
+        string lote, nombreP, descripcion;
+        DateTime fechaCad;
         float precio;
         int ProductoStat, idTipo, cantidadP, puntosCanejo, Puntos, reqReceta;        
         public frmProducto()
@@ -29,6 +29,8 @@ namespace GUI
             InitializeComponent();
             mostrarMensajes();
             cargarTipos();
+            cargarProductos();
+            colorDataGridview();
         }
         private void frmProducto_Load(object sender, EventArgs e)
         {
@@ -145,6 +147,7 @@ namespace GUI
                 return;
             }
             errorProvider1.SetError(nudPuntosParaCanjeo, "");
+
             if(rbtnEspecialNo.Checked == true)
             {
                 conversionesProducto();
@@ -153,6 +156,15 @@ namespace GUI
             else if(rbtnEspecialSi.Checked == true)
             {
                 conversionesProducto();
+                fechaCad = dtpFechaCad.Value.Date;
+                if (rbtnReqPantSi.Checked == true)
+                {
+                    reqReceta = 1;
+                }
+                else
+                {
+                    reqReceta = 0;
+                }
                 MessageBox.Show(BProducto.insertarProductoTipo2(lote, nombreP, descripcion, precio, puntosCanejo, cantidadP, Puntos, ProductoStat, idTipo,fechaCad,reqReceta));
             }
             else
@@ -177,6 +189,13 @@ namespace GUI
 
         private void nudLote_ValueChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void dgvResBusquedaProd_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            lblIdProducto.Text= dgvResBusquedaProd.CurrentRow.Cells[0].Value.ToString();
+
 
         }
         #endregion
@@ -234,18 +253,8 @@ namespace GUI
             Puntos = Convert.ToInt32(nudPuntosdeCanjeo.Value);
             ProductoStat = 1;        
             idTipo = Convert.ToInt32(cmbTipoProducto.SelectedValue);
-            if(rbtnEspecialSi.Checked==true)
-            {
-                fechaCad= string.Format(dtpFechaCad.Value.ToShortDateString(), "yyyy-MM-dd");
-                if (rbtnReqPantSi.Checked==true)
-                {
-                    reqReceta = 1;
-                }
-                else
-                {
-                    reqReceta = 0;
-                }
-            }
+            
+
         }
         public void cargarTipos()
         {
@@ -253,6 +262,15 @@ namespace GUI
             cmbTipoProducto.DataSource = lista;
             cmbTipoProducto.DisplayMember = "nombreT";
             cmbTipoProducto.ValueMember = "idTipo";
+        }
+        public void cargarProductos()
+        {
+            dgvResBusquedaProd.DataSource = BProducto.MostrarProductos();
+            //dgvResBusquedaProd.Columns["idProveedor"].Visible = false;
+        }
+        public void colorDataGridview()
+        {
+            dgvResBusquedaProd.ForeColor = Color.FromArgb(5, 15, 40);
         }
     }
 }

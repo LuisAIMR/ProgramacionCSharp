@@ -8,7 +8,7 @@ namespace DAL
 {
     public class D_Especial
     {
-        public string FechaCad { get; set; }
+        public  DateTime FechaCad { get; set; }
         public int reqReceta { get; set; }
     }
 }

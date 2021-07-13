@@ -30,8 +30,12 @@ namespace GUI
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPantallaPrincipal));
             this.barraTitulo = new System.Windows.Forms.Panel();
+            this.lblIdEmpleado = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnLogo = new System.Windows.Forms.PictureBox();
             this.btnRestaurar = new System.Windows.Forms.PictureBox();
@@ -63,6 +67,7 @@ namespace GUI
             this.btnProducto = new FontAwesome.Sharp.IconButton();
             this.btnVentas = new FontAwesome.Sharp.IconButton();
             this.pnlBtnMenu = new System.Windows.Forms.Panel();
+            this.dgvCargarDatosEmpleado = new System.Windows.Forms.DataGridView();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblPuesto = new System.Windows.Forms.Label();
             this.btnMenu = new FontAwesome.Sharp.IconButton();
@@ -78,12 +83,14 @@ namespace GUI
             this.pnlMenVertical.SuspendLayout();
             this.pnlSubmenuReportes.SuspendLayout();
             this.pnlBtnMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCargarDatosEmpleado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnUser)).BeginInit();
             this.SuspendLayout();
             // 
             // barraTitulo
             // 
             this.barraTitulo.BackColor = System.Drawing.Color.SlateBlue;
+            this.barraTitulo.Controls.Add(this.lblIdEmpleado);
             this.barraTitulo.Controls.Add(this.label1);
             this.barraTitulo.Controls.Add(this.btnLogo);
             this.barraTitulo.Controls.Add(this.btnRestaurar);
@@ -97,6 +104,16 @@ namespace GUI
             this.barraTitulo.Size = new System.Drawing.Size(1300, 35);
             this.barraTitulo.TabIndex = 1;
             this.barraTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.barraTitulo_MouseDown);
+            // 
+            // lblIdEmpleado
+            // 
+            this.lblIdEmpleado.AutoSize = true;
+            this.lblIdEmpleado.Location = new System.Drawing.Point(309, 10);
+            this.lblIdEmpleado.Name = "lblIdEmpleado";
+            this.lblIdEmpleado.Size = new System.Drawing.Size(35, 13);
+            this.lblIdEmpleado.TabIndex = 24;
+            this.lblIdEmpleado.Text = "label2";
+            this.lblIdEmpleado.Visible = false;
             // 
             // label1
             // 
@@ -595,6 +612,7 @@ namespace GUI
             // 
             // pnlBtnMenu
             // 
+            this.pnlBtnMenu.Controls.Add(this.dgvCargarDatosEmpleado);
             this.pnlBtnMenu.Controls.Add(this.lblNombre);
             this.pnlBtnMenu.Controls.Add(this.lblPuesto);
             this.pnlBtnMenu.Controls.Add(this.btnMenu);
@@ -604,6 +622,39 @@ namespace GUI
             this.pnlBtnMenu.Name = "pnlBtnMenu";
             this.pnlBtnMenu.Size = new System.Drawing.Size(220, 103);
             this.pnlBtnMenu.TabIndex = 32;
+            // 
+            // dgvCargarDatosEmpleado
+            // 
+            this.dgvCargarDatosEmpleado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCargarDatosEmpleado.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvCargarDatosEmpleado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCargarDatosEmpleado.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvCargarDatosEmpleado.Location = new System.Drawing.Point(85, 49);
+            this.dgvCargarDatosEmpleado.Name = "dgvCargarDatosEmpleado";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCargarDatosEmpleado.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvCargarDatosEmpleado.Size = new System.Drawing.Size(129, 40);
+            this.dgvCargarDatosEmpleado.TabIndex = 59;
             // 
             // lblNombre
             // 
@@ -693,6 +744,7 @@ namespace GUI
             this.pnlSubmenuReportes.ResumeLayout(false);
             this.pnlBtnMenu.ResumeLayout(false);
             this.pnlBtnMenu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCargarDatosEmpleado)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnUser)).EndInit();
             this.ResumeLayout(false);
 
@@ -738,5 +790,7 @@ namespace GUI
         private System.Windows.Forms.Button btnReporteEmpleados;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnReporteProductos;
+        public System.Windows.Forms.Label lblIdEmpleado;
+        private System.Windows.Forms.DataGridView dgvCargarDatosEmpleado;
     }
 }

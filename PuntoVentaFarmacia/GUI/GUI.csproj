@@ -164,6 +164,7 @@
     <Compile Include="frmReportesVentas.Designer.cs">
       <DependentUpon>frmReportesVentas.cs</DependentUpon>
     </Compile>
+    <Compile Include="IForm.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="frmProveedor.cs">
@@ -367,10 +368,6 @@
     <ProjectReference Include="..\Business\Business.csproj">
       <Project>{4098feb2-3b7e-4f50-8df8-234f0be32d75}</Project>
       <Name>Business</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DAL\DAL.csproj">
-      <Project>{e2dd1ff6-af1e-4570-b031-aee07b9e140b}</Project>
-      <Name>DAL</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

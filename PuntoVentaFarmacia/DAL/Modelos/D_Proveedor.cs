@@ -116,7 +116,10 @@ namespace DAL
                 var reader = cmd.ExecuteReader();
 
                 if (reader.HasRows == false)
+                {
+                    reader.Close();
                     return null;
+                }
 
                 tablaBuscarProveedores.Load(reader);
                 conexion.cerrar();
